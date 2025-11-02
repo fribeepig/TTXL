@@ -7,6 +7,8 @@ import sys
 import array
 import random
 
+#any kind of comment!
+
 #Actual game scenes
 
 def upstairs_hall(): #to do
@@ -17,7 +19,7 @@ def upstairs_hell(): #to do
 
 def your_room(): #Scene 1
     print("You are sitting in the large armchair in your room. Which is located diagonally across from the door out into the {hall}.")
-    action = input("> ").lower()
+    action = input("> ").lower().strip()
     if action == "look room":
         print("Your room is a boxy space roughly 14' by 16', from the armchair you can see the whole room with a little craning of your neck. The rooms")
         print("walls are covered in {prints} hanging in frames, two walls are painted a dark rusty orange, and your {bed} is shoved into the corner where") 
@@ -72,7 +74,7 @@ def drunk_crash():
 def talking2companions():
     while True: #creates a loop
         incidental(comp[0],loc) #incidental(companion,location) is a defined secondary function under each scene
-        action = input("> ").lower
+        action = input("> ").lower().strip()
         if action == "help":
             print("When talking to a companion you have a few options, 'shoot the breeze'(chat), 'small talk'(current), and 'big talk'(us). As well as 'exit'.")
             pause()
@@ -146,7 +148,7 @@ def start_screen(): #Start screena
     print("Welcome to Transtextual")
     print("       by Eryn")
     print("Do you want to Start, or do you need Help?")
-    choice = input("> ").lower()
+    choice = input("> ").lower().strip()
     if choice == "start":
         start_game() 
     elif choice == "help":
@@ -165,7 +167,7 @@ def help_screen(): #Player info
     print("you can interact with, and if someone asks you a question I'll tell you what your options are. At anytime in the game you")
     print("can use the inputs 'inventory', 'save', and 'load' to do what it sounds like the command does.")
     print("Do you understand?")
-    choice = input("> ").lower()
+    choice = input("> ").lower().strip()
     if choice == "yes":
         start_screen() 
     elif choice == "no":
@@ -188,7 +190,7 @@ def help_screen(): #Player info
         print("anytime a scene is being described to you, I actually had to create and reference it earlier in the code, essentially")
         print("that means that anytime you open Transtextual the game reads and remembers every single possible scene, before it even")
         print("introduces itself! Isn't that neat! If you want more examples of my bad design hit enter, or to escape type 'home'")
-        choice = input("> ").lower() #this bit allows an empty input to continue onwards, or the input of 'home' to escape
+        choice = input("> ").lower().strip() #this bit allows an empty input to continue onwards, or the input of 'home' to escape
         if choice == "":
              print()
              code_issues()
@@ -221,7 +223,7 @@ def wrap_text(writing, width):
     return textwrap.fill(writing, width)
 
 def pause(): #Pause and wait for user input function
-    choice = input("Continue?").lower()
+    choice = input("Continue?").lower().strip()
     if choice == "":
         pass
     else:
@@ -238,7 +240,7 @@ def dest_list():
 
 def car():
     alc_check()
-    destination = input("Where do you want to go?").lower()
+    destination = input("Where do you want to go?").lower().strip()
     if destination == "i don't know" or 'idk' or 'help' or 'i dont know':
         print("These are the places you can think to go to:")
         dest_list()
@@ -318,7 +320,7 @@ def jacket(): #First Time Jacket Interaction
     print("that shoplifting phase you went through in highschool. The jacket is, as much as you love it, kind of a piece of shit, some fast fashion bullshit that")
     print("you didn't buy, but found in a closet. You'll never be able to replace it exactly. Especially now that its once vaguely green, vaguely brown canvas")
     print("outershell has faded and sunbleached into a nigh unreplicable hue.")
-    choice = input("> ").lower()
+    choice = input("> ").lower().strip()
     if choice == "use pockets":
         print("You rummage through the many pockets of your jacket searching for anything you might have left in it over summer. Across its 9 pockets you find a folded")
         print("note, your pocket scissors, a pen, a pocket sized notebook, $7, a large coin, and a usb stick")
@@ -338,7 +340,7 @@ def jacket(): #First Time Jacket Interaction
     elif choice == 'remove jacket':
         print("You're not going to do that, she would never do that. Look, I'm not going to let /you/ hurt her, I mean she's going to hurt through this experience, but I")
         print("refuse to let you take away her support maliciously, if you keep trying, I will be back and we're going to have a long conversation, do you understand me?")
-        choice = input("< ").lower()
+        choice = input("< ").lower().strip()
         if choice == 'yes':
           print("okay, good.")
           print('')
@@ -417,7 +419,7 @@ def usbstick():
 
 def notebook():
     print("A small notebook, you can use it to record how your day has been going!")
-    menu = input("Save / Load").lower()
+    menu = input("Save / Load").lower().strip()
     if menu == "save":
         save_game()
     elif menu == "load":
@@ -468,7 +470,7 @@ def oraclecards():
         D = random.randint(1,6)
         if D == 6:
             print("You manage to fumble and pull 5 cards. Do you want to {look} at all of them or just {move on}?")
-            choice = input('> ').lower()
+            choice = input('> ').lower().strip()
             if choice == 'look' or 'look at cards' or 'look at all of them' or 'yes':
                 print("The five cards end up face down in your hand, it's hard to say if you should flip them horizontally or vertically, you decide to flip")
                 print("them without any respect to orinetation, afterall it was a mistake to pull this many at all, what the cards mean won't be all that")
@@ -602,7 +604,7 @@ def oraclecards():
     else:
         print("Damn, that's fucked, you don't even have the 'no_one' companion that I use to check against, try getting someone to hangout with you.")
     print("Are you sure you want to draw the third and final card...")
-    choice = input("> ").lower()
+    choice = input("> ").lower().strip()
     if choice == "yes":
         print("You pull out a...") #to do
         inv_manage()
@@ -657,7 +659,7 @@ def remove_item(item, quantity): #Remove from Inv Function
 
 def use_me(): #Generic use me Inv Nav
     print("Use what?")
-    item = input("> ").lower()
+    item = input("> ").lower().strip()
     strg = item.replace(" ","")
     if item in inventory:
         function_name = strg
@@ -670,7 +672,7 @@ def use_me(): #Generic use me Inv Nav
 
 def use_env(): #Equip item to Hand Function
     print("Use what?")
-    item = input("> ").lower() #determines what item
+    item = input("> ").lower().strip() #determines what item
     if item in inventory:
         add_item(hand[0],1) #add whatever is in hand to inv.
         hand.pop(0) #removes item from hand
@@ -686,7 +688,7 @@ def use_env(): #Equip item to Hand Function
 
 def drop_object(): #drop items from Inv
     print("Drop what?")
-    item = input("").lower()
+    item = input("").lower().strip()
     if item == "jacekt":
         print("You can't drop that.")
     else:
