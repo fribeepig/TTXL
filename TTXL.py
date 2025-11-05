@@ -140,8 +140,9 @@ def whateverwstatue(voyeurism):
     print("about watching people?")
     answer = input("> ").lower().strip()
     if answer == "yes":
-        print('"')
+        print("<Why do you keep looking at me like that?> Danielle asks you")
     elif answer == "no":
+        print("You guess that might be weird, maybe you'll ask later.")
         pass
     else:
         print("You need to come to a decision, {yes} you ask, or {no} you don't?")
@@ -173,7 +174,8 @@ def help_screen(): #Player info
     print("if you want to use something in the environment write 'use [object], and if you are talking to someone 'ask [subject]'")
     print("or whatever contextually makes sense as a reply will work, assuming of course I thought of it. I will {highlight} objects")
     print("you can interact with, and if someone asks you a question I'll tell you what your options are. At anytime in the game you")
-    print("can use the inputs 'inventory', 'save', and 'load' to do what it sounds like the command does.")
+    print("can use the inputs 'inventory', 'save', and 'load' to do what it sounds like the command does. Occasionally the text will stop")
+    print("coming, if this happens, the program is waiting for any input, simply hit enter to continue.")
     print("Do you understand?")
     choice = input("> ").lower().strip()
     if choice == "yes":
@@ -231,7 +233,7 @@ def wrap_text(writing, width):
     return textwrap.fill(writing, width)
 
 def pause(): #Pause and wait for user input function
-    choice = input("Continue?").lower().strip()
+    choice = input("").lower().strip()
     if choice == "":
         pass
     else:
