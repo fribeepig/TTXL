@@ -270,7 +270,24 @@ def car():
             drunk_crash()
     else:
         print("I don't understand what you mean.")
+        car()
     (destination())
+
+def approach_car():
+    while True:
+        car_parked(car_loc) #describes the car's parked location
+
+
+#def car_parked('home')
+#def car_parked('cemetary')
+#def car_parked('downtown')
+#def car_parked('boyd park')
+#def car_parked('mt simon')
+#def car_parked('hi bridge')
+#def car_parked('mall')
+#def car_parked('water st')
+#def car_parked('low campus')
+#def car_parked('carson')
 
 #Car drive_tos
 
@@ -717,6 +734,8 @@ def load_game(): #Load Function (Untested)
 
 cursce = [start_game]
 loc = cursce[0]
+car_parked =['home']
+car_loc = car_parked[0]
 alc = []
 abv = []
 ang = []
