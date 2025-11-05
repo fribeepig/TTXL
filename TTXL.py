@@ -7,8 +7,6 @@ import sys
 import array
 import random
 
-#any kind of comment!
-
 #Actual game scenes
 
 def upstairs_hall(): #to do
@@ -44,7 +42,7 @@ def your_room(): #Scene 1
         your_room()
     #elif action == "look prints":
     elif action == "look bed":
-        print("The full bed is pressed against the corner, it looks relatively bare, dressed in only a fitted sheet, with a thin sheet bundled on top")
+        print("The full bed is pressed against the corner, it looks relatively bare, dressed in only a fitted sheet, and an uncovered comforter ")
    # elif action == "look tower shelf" or "look shelf":
     elif action == "inv":
         inv_manage()
@@ -95,52 +93,62 @@ def talking2companions():
 
 def discuss_relationship():
     if comp[0] == 'the_statue':
-        relationshipw/statue(statue_grth.count(1))
+        relationshipwstatue(statue_grth.count(1))
     elif comp[0] == 'the_drink':
-        relationshipw/drink(drink_grth.count(1))
+        relationshipwdrink(drink_grth.count(1))
     elif comp[0] == 'the_girl':
-        relationshipw/girl(girl_grth.count(1))
+        relationshipwgirl(girl_grth.count(1))
     elif comp[0] == 'the_fetish':
-        relationshipw/fetish(fetish_grth.count(1))
+        relationshipwfetish(fetish_grth.count(1))
     elif comp[0] == 'the_writer':
-        relationshipw/writer(writer_grth.count(1))
+        relationshipwwriter(writer_grth.count(1))
 
 def discuss_current():
     if comp[0] == 'no_one':
         print("You're alone, who are you even trying to talk to?")
         exit()
     elif comp[0] == 'the_statue':
-        currentw/statue(loc)
+        currentwstatue(loc)
     elif comp[0] == 'the_drink':
-        currentw/drink(loc)
+        currentwdrink(loc)
     elif comp[0] == 'the_girl':
-        currentw/girl(loc)
+        currentwgirl(loc)
     elif comp[0] == 'the_fetish':
-        currentw/fetish(loc)
+        currentwfetish(loc)
     elif comp[0] == 'the_writer':
-        currentw/writer(loc)
+        currentwwriter(loc)
 
 def discuss_whatever():
+    ShootintheShit = random.randint(1,)
     if comp[0] == 'the_statue':
-        ShootintheShit = random.randint(1,) #to be written
-        whateverw/statue(ShootintheShit)
+        whateverwstatue(ShootintheShit)
     elif comp[0] == 'the_drink':
-        ShootintheShit = random.randint(1,) #to be written
-        whateverw/drink(ShootintheShit)
+        whateverwdrink(ShootintheShit)
     elif comp[0] == 'the_girl':
-        ShootintheShit = random.randint(1,) #to be written
-        whateverw/girl(ShootintheShit)
+        whateverwgirl(ShootintheShit)
     elif comp[0] == 'the_fetish':
-        ShootintheShit = random.randint(1,) #to be written
-        whateverw/fetish(ShootintheShit)
+        whateverwfetish(ShootintheShit)
     elif comp[0] == 'the_writer':
-        ShootintheShit = random.randint(1,) #to be written
-        whateverw/writer(ShootintheShit)
+        whateverwwriter(ShootintheShit)
 
 
 #Shootin the Shit w/Companions
+voyeurism = 1
+def whateverwstatue(voyeurism):
+    print("You can't help but find your attention locked to Danielle, you're trying not to stare, but you've always had difficultly looking away from people.")
+    print("She doesn't seem to notice, or maybe she does, and just doesn't really mind. You've been unable to tell the difference before. Should you ask her")
+    print("about watching people?")
+    answer = input("> ").lower().strip()
+    if answer == "yes":
+        print('"')
+    elif answer == "no":
+        pass
+    else:
+        print("You need to come to a decision, {yes} you ask, or {no} you don't?")
 
 #Discussing Relationship w/Companions
+
+#Talking about current scene w/Companions
 
 #Initial Menus and Such
 
@@ -234,60 +242,74 @@ def alc_check():
     abv.pop(0)
     abv.insert(0,D)
 
+def drink():
+    alc.append(1)
+
 def dest_list():
     for location in known_loc:
         print(f"{location}")
 
 def car():
-    alc_check()
-    destination = input("Where do you want to go?").lower().strip()
-    if destination == "i don't know" or 'idk' or 'help' or 'i dont know':
-        print("These are the places you can think to go to:")
-        dest_list()
-        car()
-    elif destination in known_loc:
-        if (abv[0]) == 0:
+    while True:
+        alc_check()
+        destination = input("Where do you want to go?").lower().strip()
+        if destination == "i don't know" or 'idk' or 'help' or 'i dont know':
+            print("These are the places you can think to go to:")
+            dest_list()
             pass
-        elif (abv[0]) == 1:
-            for i in range(1):
-                if random.randint() == 1:
-                    drunk_crash()
-                else:
-                    pass
-        elif (abv[0]) == 2:
-            for i in range(1):
-                if random.randint(1,4) == 1 or 2:
-                    drunk_crash()
-                else:
-                    pass
-        elif (abv[0]) == 3:
-            for i in range(1):
-                if random.randint(1,4) == 1 or 2 or 3:
-                    drunk_crash()
-                else:
-                    pass
+        elif destination in known_loc:
+            if random.randint(1,6) in range(1,abv[0]):
+                drunk_crash()
+            else:
+                break
         else:
-            drunk_crash()
-    else:
-        print("I don't understand what you mean.")
-        car()
+            print("I don't understand what you mean.")
+            pass
     (destination())
 
 def approach_car():
     while True:
         car_parked(car_loc) #describes the car's parked location
 
+home = 'home'
+def car_parked(home):
+    print("Your car is parked in the driveway,") #etc.
 
-#def car_parked('home')
-#def car_parked('cemetary')
-#def car_parked('downtown')
-#def car_parked('boyd park')
-#def car_parked('mt simon')
-#def car_parked('hi bridge')
-#def car_parked('mall')
-#def car_parked('water st')
-#def car_parked('low campus')
-#def car_parked('carson')
+cemetary = 'cemetary'    
+def car_parked(cemetary):
+    print("")
+
+downtown = 'downtown'
+def car_parked(downtown):
+    print("")
+
+boyd = 'boyd park'
+def car_parked(boyd):
+    print("")
+
+simon = 'mt simon'
+def car_parked(mt):
+    print("")
+
+high = 'hi bridge'
+def car_parked(high):
+    print("")
+
+mall = 'mall'
+def car_parked(mall):
+    print("")
+
+water = 'water st'
+def car_parked(water):
+    print("")
+
+campus = 'low campus'
+def car_parked(campus):
+    print("")
+
+carson = 'carson'
+def car_parked(carson):
+    print("")
 
 #Car drive_tos
 
@@ -302,15 +324,15 @@ def wine(): #Model of generic use_me() function, and for Wine
     alc_check()
     if (abv[0]) == 0:
         print("You drink the first third of the wine. You are feeling a little a tipsy, probably not enough for it to be a problem.")
-        alc.append('1')
+        drink()
         inv_manage()
     elif (abv[0]) == 1:
         print("You drink roughly a third of the wine. You are feeling comfortably lightheaded, probably shouldn't drive, but no one should notice.")
-        alc.append('1')
+        drink()
         inv_manage()
     elif (abv[0]) == 2:
         print("You finish off the wine. You feel comfortably numbed, confident, you feel drunker than you should, but you aren't complaining.")
-        alc.append('1')
+        drinK()
         inv_manage()
 
 def skirt(): #Skirt Interaction Model
@@ -734,8 +756,8 @@ def load_game(): #Load Function (Untested)
 
 cursce = [start_game]
 loc = cursce[0]
-car_parked =['home']
 car_loc = car_parked[0]
+car_spot = ['home']
 alc = []
 abv = []
 ang = []
