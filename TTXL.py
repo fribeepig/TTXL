@@ -140,7 +140,9 @@ def whateverwstatue(voyeurism):
     print("about watching people?")
     answer = input("> ").lower().strip()
     if answer == "yes":
-        print("<Why do you keep looking at me like that?> Danielle asks you")
+        #this bit is formatted intentionally, in order to create a novel like shape output
+        print('"Why do you keep looking at me like that?" Danielle asks you, passively chewing on the cuff of her jacket.')
+        print('"')
     elif answer == "no":
         print("You guess that might be weird, maybe you'll ask later.")
         pass
