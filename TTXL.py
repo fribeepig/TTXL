@@ -9,10 +9,10 @@ import random
 
 #Actual game scenes
 
-def upstairs_hall(): #to do
+def upstairs_hall(): #"*"
     pass
 
-def upstairs_hell(): #to do
+def upstairs_hell(): #"*"
     pass
 
 def your_room(): #Scene 1
@@ -65,11 +65,11 @@ def start_game(): #Opening Description
     your_room()
 
 def drunk_crash():
-    print("you done fucked up...")
+    print("you done fucked up...") #"*"
 
 #how the fuck do you build a dialogue system???
 
-def talking2companions():
+def talking2companions(): #"*"
     while True: #creates a loop
         incidental(comp[0],loc) #incidental(companion,location) is a defined secondary function under each scene
         action = input("> ").lower().strip()
@@ -91,7 +91,7 @@ def talking2companions():
             print("Command not understood, try 'help' for example commands.")
         exit()
 
-def discuss_relationship():
+def discuss_relationship(): #"*"
     if comp[0] == 'the_statue':
         relationshipwstatue(statue_grth.count(1))
     elif comp[0] == 'the_drink':
@@ -103,7 +103,7 @@ def discuss_relationship():
     elif comp[0] == 'the_saviour':
         relationshipwsaviour(saviour_grth.count(1))
 
-def discuss_current():
+def discuss_current(): #"*"
     if comp[0] == 'no_one':
         print("You're alone, who are you even trying to talk to?")
         exit()
@@ -118,36 +118,43 @@ def discuss_current():
     elif comp[0] == 'the_saviour':
         currentwsaviour(loc)
 
-def discuss_whatever():
-    ShootintheShit = random.randint(1,) #needs to have an upper limit eventually.
-    if comp[0] == 'the_statue':
-        whateverwstatue(ShootintheShit)
+def discuss_whatever(): #way worse, way harder, whatever #"*"
+    if comp[0] == 'the_statue': #determines who
+        ShootintheShit = random.randint(1,) #randomly selects from the lsit
+        if ShootintheShit == 1: #takes rand int
+            whateverwstatue(voyeurism) #associates the rand int with a specific conversation
     elif comp[0] == 'the_drink':
-        whateverwdrink(ShootintheShit)
+        ShootintheShit = random.randint(1,)
+        if ShootintheShit == 1:
+            whateverwdrink(voyeurism)
     elif comp[0] == 'the_girl':
-        whateverwgirl(ShootintheShit)
+        ShootintheShit = random.randint(1,)
+        if ShootintheShit == 1:
+            whateverwgirl(voyeurism)
     elif comp[0] == 'the_fetish':
-        whateverwfetish(ShootintheShit)
+        ShootintheShit = random.randint(1,)
+        if ShootintheShit == 1:
+            whateverwfetish(voyeurism)
     elif comp[0] == 'the_saviour':
-        whateverwsaviour(ShootintheShit)
+        ShootintheShit = random.randint(1,)
+        if ShootintheShit == 1:
+            whateverwsaviour(voyeurism)
 
 
 #Shootin the Shit w/Companions
-voyeurism = 1 #this must have a better solution, but whatever
 def whateverwstatue(voyeurism):
-    print("You can't help but find your attention locked to Danielle, you're trying not to stare, but you've always had difficultly looking away from people.")
-    print("She doesn't seem to notice, or maybe she does, and just doesn't really mind. You've been unable to tell the difference before. Should you ask her")
-    print("about watching people?")
-    answer = input("> ").lower().strip()
-    if answer == "yes":
-        #this bit is formatted intentionally, in order to create a novel like shape output
-        print('"Why do you keep looking at me like that?" Danielle asks you, passively chewing on the cuff of her jacket.')
-        print('')
-    elif answer == "no":
-        print("You guess that might be weird, maybe you'll ask later.")
-        pass
-    else:
-        print("You need to come to a decision, {yes} you ask, or {no} you don't?")
+    print("*")
+def whateverwdrink(voyeurism):
+    print("*")
+def whateverwgirl(voyeurism):
+    print("*")
+def whateverwfetish(voyeurism):
+    print("*")
+def whateverwsaviour(voyeurism):
+    print("Fielding is watching you, she has been the whole time really, but it's starting to get to you. Something about its deep brown eyes makes") #"*"
+    print("you feel a strange sort of conflict. On the one hand you find it aggresive, and honestly a little frightening, but equally there's a")
+    print("sense of security, an almost gitty joy at having your details attended to so carefully. You haven't felt that kind of gaze in a long time.")
+    print("\"What's on your mind?\" Fielding asks zir's eyeline")
 
 #Discussing Relationship w/Companions
 
@@ -210,7 +217,7 @@ def help_screen(): #Player info
             print ()
             start_screen()
     elif choice == "ask narrative":
-        print("") #explain once you've actually come up with one
+        print("*") #explain once you've actually come up with one
     else:
         print("I'm sorry, I'm confused what you mean.")
         print ()
@@ -253,7 +260,7 @@ def dest_list():
     for location in known_loc:
         print(f"{location}")
 
-def car():
+def car(): #"*"
     while True:
         alc_check()
         destination = input("Where do you want to go?").lower().strip()
@@ -271,49 +278,49 @@ def car():
             pass
     (destination())
 
-def approach_car():
+def approach_car(): #"*"
     while True:
         car_parked(car_loc) #describes the car's parked location
 
 home = 'home'
 def car_parked(home):
-    print("Your car is parked in the driveway,") #etc.
+    print("*") #etc.
 
 cemetary = 'cemetary'    
 def car_parked(cemetary):
-    print("")
+    print("*")
 
 downtown = 'downtown'
 def car_parked(downtown):
-    print("")
+    print("*")
 
 boyd = 'boyd park'
 def car_parked(boyd):
-    print("")
+    print("*")
 
 simon = 'mt simon'
 def car_parked(mt):
-    print("")
+    print("*")
 
 high = 'hi bridge'
 def car_parked(high):
-    print("")
+    print("*")
 
 mall = 'mall'
 def car_parked(mall):
-    print("")
+    print("*")
 
 water = 'water st'
 def car_parked(water):
-    print("")
+    print("*")
 
 campus = 'low campus'
 def car_parked(campus):
-    print("")
+    print("*")
 
 carson = 'carson'
 def car_parked(carson):
-    print("")
+    print("*")
 
 #Car drive_tos
 
@@ -606,9 +613,9 @@ def oraclecards():
             pause()
     elif comp[0] == 'the_statue': #The Lovers
         if statue_grth.count(1) in range(0,14): #upright
-            print("You pull a pleasant light cream card from the deck.") #to do
+            print("You pull a pleasant light cream card from the deck.") #"*"
         elif statue_grth.count(1) in range(15,200): #upside down
-            print('You pull') #to do
+            print('You pull') #"*"
         else:
             print("You pull a rules card from the deck, it explains that the development of your relationship with Danielle stored as a number of appended")
             print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
@@ -616,9 +623,9 @@ def oraclecards():
             pause()
     elif comp[0] == 'the_drink': #The Hermit
         if drink_grth.count(1) in range(0,14): #upside down
-            print("You pull") #to do
+            print("You pull") #"*"
         elif drink_grth.count(1) in range(15,200): #upright
-            print("You pull") #to do
+            print("You pull") #"*"
         else:
             print("You pull a rules card from the deck, it explains that the development of your relationship with [REDACTED] stored as a number of appended")
             print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
@@ -626,9 +633,9 @@ def oraclecards():
             pause()    
     elif comp[0] == 'the_saviour': #the Hanged Man
         if saviour_grth.count(1) in range(0,14): #upside down
-            print("You pull") #to do
+            print("You pull") #"*"
         elif saviour_grth.count(1) in range(15,200): #upright
-            print("You pull") #to do
+            print("You pull") #"*"
         else:
             print("You pull a rules card from the deck, it explains that the development of your relationship with Fielding stored as a number of appended")
             print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
@@ -636,9 +643,9 @@ def oraclecards():
             pause()
     elif comp[0] == 'the_fetish': #the Devil
         if fetish_grth.count(1) in range(0,14): #upside down
-            print("You pull") #to do
+            print("You pull") #"*"
         elif fetish_grth.count(1) in range(15,200): #upright
-            print("You pull") #to do
+            print("You pull") #"*"
         else:
             print("You pull a rules card from the deck, it explains that the development of your relationship with Carry stored as a number of appended")
             print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
@@ -649,7 +656,7 @@ def oraclecards():
     print("Are you sure you want to draw the third and final card...")
     choice = input("> ").lower().strip()
     if choice == "yes":
-        print("You pull out a...") #to do
+        print("You pull out a...") #"*"
         inv_manage()
     elif choice == "no":
         inv_manage()
@@ -749,11 +756,11 @@ def exit(): #Exit inv to whatever scene on
 
 #These Two are untested things off the internet
 
-def save_game(): #Save Function (Untested)
+def save_game(): #Save Function "*"
     with open("savefile.txt", "w") as f:
         f.write(",".join(inventory))
 
-def load_game(): #Load Function (Untested)
+def load_game(): #Load Function "*"
     global inventory
     with open("savefile.txt", "r") as f:
         inventory = f.read().split(",")
@@ -783,3 +790,6 @@ fetish_grth = []
 grth = []
 
 start_screen() #has to be the very end. All "def scene():" must occur in the code before they are reffered to
+
+#Notes:
+#Now that this project is starting to have significant size, use "*" to find areas where I still need to write something, at leas that I know of
