@@ -100,8 +100,8 @@ def discuss_relationship():
         relationshipwgirl(girl_grth.count(1))
     elif comp[0] == 'the_fetish':
         relationshipwfetish(fetish_grth.count(1))
-    elif comp[0] == 'the_writer':
-        relationshipwwriter(writer_grth.count(1))
+    elif comp[0] == 'the_saviour':
+        relationshipwsaviour(saviour_grth.count(1))
 
 def discuss_current():
     if comp[0] == 'no_one':
@@ -115,8 +115,8 @@ def discuss_current():
         currentwgirl(loc)
     elif comp[0] == 'the_fetish':
         currentwfetish(loc)
-    elif comp[0] == 'the_writer':
-        currentwwriter(loc)
+    elif comp[0] == 'the_saviour':
+        currentwsaviour(loc)
 
 def discuss_whatever():
     ShootintheShit = random.randint(1,)
@@ -128,33 +128,17 @@ def discuss_whatever():
         whateverwgirl(ShootintheShit)
     elif comp[0] == 'the_fetish':
         whateverwfetish(ShootintheShit)
-    elif comp[0] == 'the_writer':
-        whateverwwriter(ShootintheShit)
+    elif comp[0] == 'the_saviour':
+        whateverwsaviour(ShootintheShit)
 
 
 #Shootin the Shit w/Companions
-voyeurism = 1
-def whateverwstatue(voyeurism):
-    print("You can't help but find your attention locked to Danielle, you're trying not to stare, but you've always had difficultly looking away from people.")
-    print("She doesn't seem to notice, or maybe she does, and just doesn't really mind. You've been unable to tell the difference before. Should you ask her")
-    print("about watching people?")
-    answer = input("> ").lower().strip()
-    if answer == "yes":
-        #this bit is formatted intentionally, in order to create a novel like shape output
-        print('"Why do you keep looking at me like that?" Danielle asks you, passively chewing on the cuff of her jacket.')
-        print('"')
-    elif answer == "no":
-        print("You guess that might be weird, maybe you'll ask later.")
-        pass
-    else:
-        print("You need to come to a decision, {yes} you ask, or {no} you don't?")
 
 #Discussing Relationship w/Companions
 
 #Talking about current scene w/Companions
 
 #Initial Menus and Such
-
 def start_screen(): #Start screena
     print("Welcome to Transtextual")
     print("       by Eryn")
@@ -187,7 +171,7 @@ def help_screen(): #Player info
         print()
         start_screen() 
     elif choice == "info":
-        print("I wrote Transtextual in October of 2025, because of a Tumblr post about 'programmer art' and 'artist programming'")
+        print("I started writing Transtextual in October of 2025, because of a Tumblr post about 'programmer art' and 'artist programming'")
         print("for some reason I found the idea of trying to create a game as someone with no experience very exciting, I'm sure")
         print("that's true for a lot of first time developers. Crucially though I decided I wasn't going to actually learn how to")
         print("code, instead I was going to bodge it together as poorly as possible, initially I wanted to create this in BASIC")
@@ -562,7 +546,7 @@ def oraclecards():
             print("pictograph of a sword. The illustration is of a woman with dark brown hair, she is dressed in armor and a cloak. She sits facing away")
             print("from the viewer, her legs folded beneath her. She sits in a puddle of blood, its source obvious as the woman appears to be drawing a")
             print("sword out of her bleeding chest, on the wall behind her two more swords hang.")
-        elif D == 2: #the writer
+        elif D == 2: #the Saviour
             print("You pull a card which has a red border all around the image, in the border are a few blocks of text, going clockwise from the top left corner")
             print("the text reads 'CHALICES COPAS 9 COPPE COUPES BEKERS KELCHE' within the red border there is an illustration of two figures on a bench, a man")
             print("and a woman. The man has a sheet wrapped around, his lower half. While the woman is dressed only in thin semi-transparent light grey underwear.")
@@ -624,13 +608,13 @@ def oraclecards():
             print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
             print("mechanics of the game.")
             pause()    
-    elif comp[0] == 'the_writer': #the Hanged Man
-        if writer_grth.count(1) in range(0,14): #upside down
+    elif comp[0] == 'the_saviour': #the Hanged Man
+        if saviour_grth.count(1) in range(0,14): #upside down
             print("You pull") #to do
-        elif writer_grth.count(1) in range(15,200): #upright
+        elif saviour_grth.count(1) in range(15,200): #upright
             print("You pull") #to do
         else:
-            print("You pull a rules card from the deck, it explains that the development of your relationship with Maddy stored as a number of appended")
+            print("You pull a rules card from the deck, it explains that the development of your relationship with Fielding stored as a number of appended")
             print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
             print("mechanics of the game.")
             pause()
@@ -776,7 +760,7 @@ hand = ['mp3 player'] #now we have an object that we can check against anytime t
 girl_grth = []
 statue_grth = []
 drink_grth = []
-writer_grth = []
+saviour_grth = []
 fetish_grth = []
 
 #Win condition if grth = 15? then flip card
