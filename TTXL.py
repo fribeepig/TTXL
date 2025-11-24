@@ -12,9 +12,6 @@ import random
 def upstairs_hall(): #"*"
     pass
 
-def upstairs_hell(): #"*"
-    pass
-
 def your_room(): #Scene 1
     print("You are sitting in the large armchair in your room. Which is located diagonally across from the door out into the {hall}.")
     action = input("> ").lower().strip()
@@ -29,33 +26,36 @@ def your_room(): #Scene 1
         your_room()
     elif action == "go to hall":
         print("You move through your room carefully stepping over laundry baskets, and various unacknowledged miscellany, open the door and step out into the hall.")
-        if abv[0] == range(0,2):
-            upstairs_hall()
-            cursce.pop(0)
-            cursce.insert(0, upstairs_hall)
-        elif abv[0] == 3:
-            upstairs_hall()
-            cursce.pop(0)
-            cursce.insert(0, upstairs_hell)
+        cursce.pop(0)
+        cursce.insert(0, upstairs_hall)
+        upstairs_hall()
     elif action == "look hall":
         print("Your door is open, you can see out into the hallway, currently the space is poorly lit but you know it well from living here for over ten years.")
         your_room()
-    #elif action == "look prints":
+    elif action == "look prints":
+        print("Maybe it's the nature of people, that you get used to things you see a lot, but stopping to acknowledge the art on your walls, you notice them")
+        print("for the first time in a while. The print is an") #"*"
     elif action == "look bed":
-        print("The full bed is pressed against the corner, it looks relatively bare, dressed in only a fitted sheet, and an uncovered comforter ")
-   # elif action == "look tower shelf" or "look shelf":
+        print("The full bed is pressed against the corner, it looks relatively bare, dressed in only a fitted sheet, and an uncovered comforter. The bed is")
+        print("comfortable enough, it's only a full, but it still often manages to feel lonely. You used to sleep clinging to a king size pillow, like some")
+        print("kind of makeshift companion, but you can't help but think that seems somewhat pathetic.")
+    elif action == "look tower shelf" or "look shelf":
+        print("*")
     elif action == "inv":
         inv_manage()
-   # elif action == "look dresser":
-   # elif action == "look desk":
-    #elif action == "look closet":
+    elif action == "look dresser":
+        print("*")
+    elif action == "look desk":
+        print("*")
+    elif action == "look closet":
+        print("*")
 
 def start_game(): #Opening Description
     print("You are 21, you are living in a mid-sized midwestern town, same one you've always lived in actually. It's November, your university will be")
     print("starting back up again tomorrow after a short break, you don't have any friends in town, but you've decided that you can't just let life pass you by.")
     print("To this end you've planned to leave your phone at home today, you don't expect anyone will notice, it's not like there's anyone who might text. You know that you're")
-    print("not exactly comfortable with silence, so you've loaded up an old mp3 player with music. Today is suppposed ot be cold, but hopefully not so cold you'll")
-    print("find yourself completely isolated")
+    print("not exactly comfortable with silence, so you've loaded up an old mp3 player with music. Today is suppposed to be cold, but hopefully not so cold you'll")
+    print("find yourself completely isolated.")
     hand.pop(0)
     add_item('jacket',1)
     add_item('mp3_player',1)
@@ -71,7 +71,7 @@ def drunk_crash():
 
 def talking2companions(): #"*"
     while True: #creates a loop
-        incidental(comp[0],loc) #incidental(companion,location) is a defined secondary function under each scene
+        incidental(comp[0],cursce[0]) #incidental(companion,location) is a defined secondary function under each scene
         action = input("> ").lower().strip()
         if action == "help":
             print("When talking to a companion you have a few options, 'shoot the breeze'(chat), 'small talk'(current), and 'big talk'(us). As well as 'exit'.")
@@ -91,7 +91,7 @@ def talking2companions(): #"*"
             print("Command not understood, try 'help' for example commands.")
         exit()
 
-def discuss_relationship(): #"*"
+def discuss_relationship(): #"*" these may change to reflect how the different companions grow in deifferent ways
     if comp[0] == 'the_statue':
         relationshipwstatue(statue_grth.count(1))
     elif comp[0] == 'the_drink':
@@ -103,54 +103,31 @@ def discuss_relationship(): #"*"
     elif comp[0] == 'the_saviour':
         relationshipwsaviour(saviour_grth.count(1))
 
-def discuss_current(): #"*"
+def discuss_current(): #"*" I need to write all these dialogues, and also, double check this works
     if comp[0] == 'no_one':
-        print("You're alone, who are you even trying to talk to?")
-        exit()
-    elif comp[0] == 'the_statue':
-        currentwstatue(loc)
-    elif comp[0] == 'the_drink':
-        currentwdrink(loc)
-    elif comp[0] == 'the_girl':
-        currentwgirl(loc)
-    elif comp[0] == 'the_fetish':
-        currentwfetish(loc)
-    elif comp[0] == 'the_saviour':
-        currentwsaviour(loc)
+        pass #"*" should add to meeting fielding
+    else:
+        (callable_comp[0](cursce[0]))
 
-def discuss_whatever(): #way worse, way harder, whatever #"*"
-    if comp[0] == 'the_statue': #determines who
-        ShootintheShit = random.randint(1,) #randomly selects from the lsit
-        if ShootintheShit == 1: #takes rand int
-            whateverwstatue(voyeurism) #associates the rand int with a specific conversation
-    elif comp[0] == 'the_drink':
-        ShootintheShit = random.randint(1,)
-        if ShootintheShit == 1:
-            whateverwdrink(voyeurism)
-    elif comp[0] == 'the_girl':
-        ShootintheShit = random.randint(1,)
-        if ShootintheShit == 1:
-            whateverwgirl(voyeurism)
-    elif comp[0] == 'the_fetish':
-        ShootintheShit = random.randint(1,)
-        if ShootintheShit == 1:
-            whateverwfetish(voyeurism)
-    elif comp[0] == 'the_saviour':
-        ShootintheShit = random.randint(1,)
-        if ShootintheShit == 1:
-            whateverwsaviour(voyeurism)
+sts_lib = ["voyeurism"] #"*" has 1 option
 
+def discuss_whatever(): #"*"
+    ShootintheShit = random.randint(0,0)
+    if comp[0] == 'no_one':
+        pass #"*" Should add to meeting fielding
+    else:
+        (callable_comp[0](sts_lib[ShootintheShit]))
 
 #Shootin the Shit w/Companions
-def whateverwstatue(voyeurism):
+def the_statue(voyeurism):
     print("*")
-def whateverwdrink(voyeurism):
+def the_drink(voyeurism):
     print("*")
-def whateverwgirl(voyeurism):
+def the_girl(voyeurism):
     print("*")
-def whateverwfetish(voyeurism):
+def the_fetish(voyeurism):
     print("*")
-def whateverwsaviour(voyeurism):
+def the_saviour(voyeurism):
     print("Fielding is watching you, she has been the whole time really, but it's starting to get to you. Something about its deep brown eyes makes") #"*"
     print("you feel a strange sort of conflict. On the one hand you find it aggresive, and honestly a little frightening, but equally there's a")
     print("sense of security, an almost gitty joy at having your details attended to so carefully. You haven't felt that kind of gaze in a long time.")
@@ -347,15 +324,15 @@ def wine(): #Model of generic use_me() function, and for Wine
         inv_manage()
 
 def skirt(): #Skirt Interaction Model
-    if loc == start_game:
+    if cursce[0] == start_game:
         print("You put on the dark blue pleated skirt and twirl around in your room, it feels nice, you feel")
         print("happy, but you know you can't bear to wear it outside")
         add_item('skirt', 1)
         inv_manage()
-    elif loc == drunk_start:
+    elif cursce[0] == drunk_start:
         print("You put on the expensive tailored skirt you bought because you were hoping it would make you")
         print("feel less self conscious, that didn't work but with the wine in you, there is a nice sense of")
-        print("confidence in you, you think you'll wear it out today for the first time.")
+        print("confidence, you think you'll wear it out today for the first time.")
         pause()
         print("You are wearing your skirt.")
         drunk_start()
@@ -656,12 +633,11 @@ def oraclecards():
     print("Are you sure you want to draw the third and final card...")
     choice = input("> ").lower().strip()
     if choice == "yes":
-        print("You pull out a...") #"*"
+        print("You pull out a...") #"*" this would be a description of the current variables, as well as perhaps something about the plot, based on something
         inv_manage()
     elif choice == "no":
         inv_manage()
 #Here is being worked on
-
 
 #All of this stuff is for Inv Management, mostly it's done.
 
@@ -754,6 +730,42 @@ def drop_object(): #drop items from Inv
 def exit(): #Exit inv to whatever scene on
     (cursce[0]())
 
+#Function for adding a companion to the party
+def drink_comp_get():
+    comp.pop(0)
+    callable_comp.pop(0)
+    comp.insert(0,'the_drink')
+    callable_comp.insert(0,the_drink)
+
+def girl_comp_get():
+    comp.pop(0)
+    callable_comp.pop(0)
+    comp.insert(0,'the_girl')
+    callable_comp.insert(0,the_girl)
+
+def saviour_comp_get():
+    comp.pop(0)
+    callable_comp.pop(0)
+    comp.insert(0,'the_saviour')
+    callable_comp.insert(0,the_saviour)
+
+def statue_comp_get():
+    comp.pop(0)
+    callable_comp.pop(0)
+    comp.insert(0,'the_statue')
+    callable_comp.insert(0,the_statue)
+
+def fetish_comp_get():
+    comp.pop(0)
+    callable_comp.pop(0)
+    comp.insert(0,'the_fetish')
+    callable_comp.insert(0,the_fetish)
+
+def comp_leave():
+    comp.pop(0)
+    callable_comp.pop(0)
+    comp.insert(0,'no_one')
+    callable_comp.insert(0,no_one)
 #These Two are untested things off the internet
 
 def save_game(): #Save Function "*"
@@ -766,7 +778,6 @@ def load_game(): #Load Function "*"
         inventory = f.read().split(",")
 
 cursce = [start_game]
-loc = cursce[0]
 car_loc = car_parked[0]
 car_spot = ['home']
 alc = []
@@ -775,8 +786,9 @@ ang = []
 # mp3 list is 50 long
 mp3 = ['bedroom community by glass beach','Crumbs by Belaganas','Cecily Smith (Bonus Track) by Will Connolly','420-666-6969 by Peter France, Glam Cowgirl','Trace by Micah Marcos','I Was An Island by John-Allison Weiss','Girls Who Play Guitar by Maximo Park','Viva La Resistance by Hypernova','Lovecraft in Brooklyn by The Mountain Goats','City Never Sleeps by Tourism','i haunt ur dreams by hey, nothing','Brave as a Noun by AJJ','International Space Station by Sea Power','From Dusk to Dawn by Fever Dolls','Aphrodite, Your Electric Sexiness by Human Zoo','Brass Band by Jukebox The Ghost',"The Painter by I'm From Barcelona",'Gennifer Flowers by Fever Dolls','Love Me For Me by Sig Figs Collective','Underground by Cody Fry','Homecoming Serf by Sidney Gish','Presumably Dead Arm (617 Sessions) by Sidney Gish','Nickel by flipturn','Adeline by Fever Dolls','Talia by King Princess','a Castle of Rats by The Narcissist Cookbook','Grand Romantic Life by Mom Rock','Candlelight by Cinders','conversation by Coastal Club','Rule #3-Paperwork by Fish in a Birdcage','Rule #34 by Fish in a Birdcage','I Am the Answer by Overtown','Nail Salon by Cinders','From the Sea to the Land Beyond by Sea Power','Untouched by The Veronicas','Life Out of Phase by The Narcissist Cookbook','Sleep Walking by Cinders','Infatuation by Dudes and Their Guys','Dust and Stars(Zacks Thumb Reprise) by Blue Foster','Photos from When We Were Young by Nana Grizol','cold weather by glass beach','Moscow by Autoheart','Clean Slated State by The Altogether','Davy Crochet by The Backseat Lovers','Out of Vogue by Fever Dolls','Loaded by Primal Scream','Lets Dance to Joy Division by The Wombats','Worth It by Dudes and Their Guys','The Good Ship You by The Narcissist Cookbook','Mountain Sound by Of Monsters and Men','Rivers and Roads by The Head And The Heart','Peach Scone by Hobo Johnson','Get Used to It by Ricky Montgomery','Im Free by The Soup Dragons','yoshis island by glass beach','Last Snowstorm of the Year by Hippo Campus','This is Love by Air Traffic Controller']
 comp = ['no_one']
+callable_comp = [no_one]
 inventory = {}
-known_loc ={'water street','carson park','downtown','mall'}
+known_loc ={}
 hand = ['mp3 player'] #now we have an object that we can check against anytime the player opts to 'use'
 
 #Companion development, card flips 
