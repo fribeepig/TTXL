@@ -13,7 +13,7 @@ def upstairs_hall(): #"*"
     pass
 
 def your_room(): #Scene 1
-    print("You are sitting in the large armchair in your room. Which is located diagonally across from the door out into the {hall}.")
+    print("You are sitting in the large armchair in your {room}. Which is located diagonally across from the door out into the {hall}.")
     action = input("> ").lower().strip()
     if action == "look room":
         print("Your room is a boxy space roughly 14' by 16', from the armchair you can see the whole room with a little craning of your neck. The rooms")
@@ -34,7 +34,13 @@ def your_room(): #Scene 1
         your_room()
     elif action == "look prints":
         print("Maybe it's the nature of people, that you get used to things you see a lot, but stopping to acknowledge the art on your walls, you notice them")
-        print("for the first time in a while. The print is an") #"*"
+        print("for the first time in a while. It saddens you a little that you don't think more about the things you're used to seeing.")
+        print("Do you want to take the time to look at each piece in detail?") #"*"
+        lookin = input("> ").lower().strip()
+        if lookin == "no":
+            your_room()
+        elif lookin == "yes":
+            print("")
     elif action == "look bed":
         print("The full bed is pressed against the corner, it looks relatively bare, dressed in only a fitted sheet, and an uncovered comforter. The bed is")
         print("comfortable enough, it's only a full, but it still often manages to feel lonely. You used to sleep clinging to a king size pillow, like some")
