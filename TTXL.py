@@ -9,47 +9,6 @@ import random
 
 #Actual game scenes
 
-def upstairs_hall(): #"*"
-    pass
-
-def your_room(): #Scene 1
-    print("You are sitting in the large armchair in your room. Which is located diagonally across from the door out into the {hall}.")
-    action = input("> ").lower().strip()
-    if action == "look room":
-        print("Your room is a boxy space roughly 14' by 16', from the armchair you can see the whole room with a little craning of your neck. The rooms")
-        print("walls are covered in {prints} hanging in frames, two walls are painted a dark rusty orange, and your {bed} is shoved into the corner where") 
-        print("they meet. There are string lights lining the upper edge of the walls around the space. The floor is covered in laundry, and other mess. The") 
-        print("surfaces of your room are covered in knick knacks, and books. Most notable are the bookshelf near the armchair, the tower {shelf} near the")
-        print("door, your bedside table, and the {dresser}. Also in the room is your relatively clean {desk} and the {closet} which you recently removed the")
-        print("doors from in order to use its space more effectively.")
-        pause()
-        your_room()
-    elif action == "go to hall":
-        print("You move through your room carefully stepping over laundry baskets, and various unacknowledged miscellany, open the door and step out into the hall.")
-        cursce.pop(0)
-        cursce.insert(0, upstairs_hall)
-        upstairs_hall()
-    elif action == "look hall":
-        print("Your door is open, you can see out into the hallway, currently the space is poorly lit but you know it well from living here for over ten years.")
-        your_room()
-    elif action == "look prints":
-        print("Maybe it's the nature of people, that you get used to things you see a lot, but stopping to acknowledge the art on your walls, you notice them")
-        print("for the first time in a while. The print is an") #"*"
-    elif action == "look bed":
-        print("The full bed is pressed against the corner, it looks relatively bare, dressed in only a fitted sheet, and an uncovered comforter. The bed is")
-        print("comfortable enough, it's only a full, but it still often manages to feel lonely. You used to sleep clinging to a king size pillow, like some")
-        print("kind of makeshift companion, but you can't help but think that seems somewhat pathetic.")
-    elif action == "look tower shelf" or "look shelf":
-        print("*")
-    elif action == "inv":
-        inv_manage()
-    elif action == "look dresser":
-        print("*")
-    elif action == "look desk":
-        print("*")
-    elif action == "look closet":
-        print("*")
-
 def start_game(): #Opening Description
     print("You are 21, you are living in a mid-sized midwestern town, same one you've always lived in actually. It's November, your university will be")
     print("starting back up again tomorrow after a short break, you don't have any friends in town, but you've decided that you can't just let life pass you by.")
@@ -61,8 +20,11 @@ def start_game(): #Opening Description
     add_item('mp3_player',1)
     pause()
     cursce.pop(0) 
-    cursce.insert(0, your_room)
-    your_room()
+    cursce.insert(0,scene_1)
+
+def scene_1():
+    print("Looking into the cup you see the final swig of coffee disappear beneath your nose, the light brown is run through with dark splotches of syrup not fully mixed in.")
+    print("You aren't certain of the time, you intend to keep it that way for the majority of your day.")
 
 def drunk_crash():
     print("you done fucked up...") #"*"
@@ -89,7 +51,7 @@ def talking2companions(): #"*"
             pause()
         else:
             print("Command not understood, try 'help' for example commands.")
-        exit()
+    exit()
 
 def discuss_relationship(): #"*" these may change to reflect how the different companions grow in deifferent ways
     if comp[0] == 'the_statue':
@@ -360,6 +322,7 @@ def jacket(): #First Time Jacket Interaction
         add_item('large coin',1)
         add_item('usb stick',1)
         add_item('notebook',1)
+        add_item('oracle cards',1)
         inv_manage()
     elif choice == 'back':
         inv_manage()
@@ -451,7 +414,7 @@ def notebook():
     elif menu == "load":
         load_game()
     
-def oraclecards():
+def oracle_cards():
     print("You deftly pull out the deck of cards and pull the rubber band from binding the stack together onto your wrist, you quickly shuffle")
     print("while focusing on the strange day you're going through. Performing the requisite twisting to ensure a true shuffle for the oracle cards.")
     print("Though you aren't following any kind of specific spread, you figure that the first card should refer to yourself, the second to someone")
@@ -789,6 +752,7 @@ callable_comp = [no_one]
 inventory = {}
 known_loc ={}
 hand = ['mp3 player'] #now we have an object that we can check against anytime the player opts to 'use'
+outfit = ['default']
 
 #Companion development, card flips 
 girl_grth = []
