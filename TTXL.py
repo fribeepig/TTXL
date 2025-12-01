@@ -93,7 +93,7 @@ def the_saviour(voyeurism):
     print("Fielding is watching you, she has been the whole time really, but it's starting to get to you. Something about its deep brown eyes makes") #"*"
     print("you feel a strange sort of conflict. On the one hand you find it aggresive, and honestly a little frightening, but equally there's a")
     print("sense of security, an almost gitty joy at having your details attended to so carefully. You haven't felt that kind of gaze in a long time.")
-    print("\"What's on your mind?\" Fielding asks zir's eyeline")
+    print("\"What's on your mind?\" Fielding asks, zirs eyeline")
 
 #Discussing Relationship w/Companions
 
@@ -101,7 +101,8 @@ def the_saviour(voyeurism):
 
 #Initial Menus and Such
 def start_screen(): #Start screena
-    print("Welcome to Transtextual")
+    print("Welcome to")
+    title()
     print("       by Eryn")
     print("Do you want to Start, or do you need Help?")
     choice = input("> ").lower().strip()
@@ -768,3 +769,18 @@ start_screen() #has to be the very end. All "def scene():" must occur in the cod
 
 #Notes:
 #Now that this project is starting to have significant size, use "*" to find areas where I still need to write something, at leas that I know of
+
+
+def title():
+    print("    .....                                                    .x+=:.        s                                 s                                     .. ")
+    print(" .H8888888h.  ~-.                                           z`    ^%      :8                                :8                               x .d88\"  ")
+    print(" 888888888888x  `>    .u    .                  u.    u.        .   <k    .88                  uL   ..      .88       x.    .                  5888R   ")
+    print("X~     `?888888hx~  .d88B :@8c        u      x@88k u@88c.    .@8Ned8\"   :888ooo      .u     .@88b  @88R   :888ooo  .@88k  z88u         u      '888R   ")
+    print("'      x8.^\"*88*\"  =\"8888f8888r    us888u.  ^\"8888\"\"8888\"  .@^%8888\"  -*8888888   ud8888.  '\"Y888k/\"*P  -*8888888 ~\"8888 ^8888      us888u.    888R   ")
+    print(" `-:- X8888x         4888>'88\"  .@88 \"8888\"   8888  888R  x88:  `)8b.   8888    :888'8888.    Y888L       8888      8888  888R   .@88 \"8888\"   888R   ")
+    print("      488888>        4888> '    9888  9888    8888  888R  8888N=*8888   8888    d888 '88%\"     8888       8888      8888  888R   9888  9888    888R   ")
+    print("    .. `\"88*         4888>      9888  9888    8888  888R   %8\"    R88   8888    8888.+\"        `888N      8888      8888  888R   9888  9888    888R   ")
+    print("  x88888nX\"      .  .d888L .+   9888  9888    8888  888R    @8Wou 9%   .8888Lu= 8888L       .u./\"888&    .8888Lu=   8888 ,888B . 9888  9888    888R   ")
+    print(" !\"*8888888n..  :   ^\"8888*\"    9888  9888   \"*88*\" 8888\" .888888P`    ^%888*   '8888c. .+ d888\" Y888*\"  ^%888*    \"8888Y 8888\"  9888  9888   .888B .")
+    print("'    \"*88888888*       \"Y\"      \"888*\"\"888\"    \"\"   'Y\"   `   ^\"F        'Y\"     \"88888%   ` \"Y   Y\"       'Y\"      `Y\"   'YP    \"888*\"\"888\"  ^*888%  ")
+    print("        ^\"***\"`                  ^Y\"   ^Y'                                         \"YP'                                           ^Y\"   ^Y'     \"%    ")
