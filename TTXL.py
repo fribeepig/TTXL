@@ -12,7 +12,7 @@ import random
 def start_game(): #Opening Description
     print("You are 21, you are living in a mid-sized midwestern town, same one you've always lived in actually. It's November, your university will be")
     print("starting back up again tomorrow after a short break, you don't have any friends in town, but you've decided that you can't just let life pass you by.")
-    print("To this end you've planned to leave your phone at home today, you don't expect anyone will notice, it's not like there's anyone who might text. You know that you're")
+    print("To this end you left your phone at home today, you don't expect anyone will notice, it's not like there's anyone who might text. You know that you're")
     print("not exactly comfortable with silence, so you've loaded up an old mp3 player with music. Today is suppposed to be cold, but hopefully not so cold you'll")
     print("find yourself completely isolated.")
     hand.pop(0)
@@ -23,8 +23,41 @@ def start_game(): #Opening Description
     cursce.insert(0,scene_1)
 
 def scene_1():
-    print("Looking into the cup you see the final swig of coffee disappear beneath your nose, the light brown is run through with dark splotches of syrup not fully mixed in.")
-    print("You aren't certain of the time, you intend to keep it that way for the majority of your day.")
+    print("Looking into the cup {you} see the final swig of coffee disappear beneath your nose, the light brown is run through with dark splotches of syrup not fully mixed in.")
+    print("You aren't certain of the time, and you intend to keep it that way for the majority of the day. Downing the specialty drink, the phrase \"slemming coffee\" springs")
+    print("to your mind, in the way personal memetics always do. As you set it on its plate the white porcelain lets out a solid clink. You are sitting in your favorite local")
+    print("cafe, officially its name is \"Racy D'lenes Coffee Lounge\", but ever since you were introduced to it, you've only ever called it {Racy's}. You are sitting by the")
+    print("bay windows that make up much of the cafe's front, at the {table} you usually take.")
+    while True:
+        print("You can feel the caffeine slowing you down, sort of like your head is filling with that back of the throat weight that comes with a deep yawn. You regret having not")
+        print("ordered your drink with decaf.")
+        action = input("> ").lower().strip()
+        if action == "look you":
+            print("You got dressed today with a little more intentionality than usual, but not by much. Your attire is basic, but you know that it's comfortable, and hopefully normal enough")
+            print("not to be noteworthy. You're wearing your jacket, which you think of as something akin to your signature, a black t-shirt which reads \"Something Rotten\" under an image of a character")
+            print("in a videogame, also wearing a black t-shirt with \"Something Rotten\" emblazened across the front, a pair of cuffed dark wash jeans expose the missmatch socks whose patterns")
+            print("stick out from your running shoes.")
+            pause()
+            print("Though it's too bright to see your reflection in the window next to you, you know what you look like. Your curly, dark brown hair reaches your shoulders,")
+            print("but only that growing from the top of your head, on the sides and back it barely manages to clear your chin. An odd side effect of the process that lead to your current hairstyle.")
+            print("As for your face, the features which stand out most to you are these: your nose is large and rounded but you'd hesitate to call it bulbous, your eyebrows are what you'd call")
+            print("fuzzy, not exactly wild, but certainly unattended, the inside end of your left brow is oddly thinned and doesn't flow with the rest of the hairs. Your lips are angular, and asymetrical,")
+            print("on one side the upper lip slopes down to meet the edge of your lower lip, and on the other it ends some distance before the edge of your lower lip. Atop all of these features sit a pair")
+            print("of browline glasses, mostly made of thin silver metal, with the browline itself being semi transparent green plastic they got roughed up shortly after you got them so they sit a litle oddly on your face.")
+            pause()
+        elif action == "look racy's":
+            print("*")
+        elif action == "look table":
+            print("On the table sits the now empty mug, formerly the vessel for your preffered drink from Racy's, a \"Willow\", though you struggle to define what exactly it tastes like, it has been")
+            print("your go to order for the past few years, since Jeremiah stopped working as a barista, when he was there your go to was the \"Bree's Knees\" but no one else makes it like he used to")
+            print("the \"Willow\" is a far less subtle drink, so you find that it comes out more consistently well made. As for the table itself, it's unremarkable as an object, a slightly wobbly tall circular")
+            print("surface, flanked on two sides by spinning stools. The only thing that makes it compelling is the specific nostalgia you have tied to it... But today isn't about the past, today is the future!")
+            print("You choose not to dwell on it.")
+            pause()
+        elif action == "inventory" or "inv":
+            inv_manage()
+        else:
+            print("I don't understand.")
 
 def drunk_crash():
     print("you done fucked up...") #"*"
@@ -169,9 +202,11 @@ def code_issues(): #Diary of Bodge
     print("it as a part of the if statement for every single input tree.")
     pause()
     print("I created a system for inventory management it uses a series of dumb function loops and a lot of if statements, all to come to a conclusion that at time")
-    print("of writing, I don't actually know will work once the game gets more complex, natuarally that is part of the appeal of this project to me it's just a lot")
+    print("of writing, I don't actually know if it will work once the game gets more complex, natuarally that is part of the appeal of this project to me it's just a lot")
     print("of work to redo if I royally screwed it up.")
     pause()
+    print("Currently as I design this each line is created as it's own independent print action, which I want to change, it occurs to me know though that, I should definitely")
+    print("change my workflow now so I don't have to go change everything all at once later.")
     start_screen()
 
 #Storage for Looking through stuff
@@ -324,6 +359,7 @@ def jacket(): #First Time Jacket Interaction
         add_item('usb stick',1)
         add_item('notebook',1)
         add_item('oracle cards',1)
+        add_item('wallet',1)
         inv_manage()
     elif choice == 'back':
         inv_manage()

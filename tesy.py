@@ -3,15 +3,13 @@ import string
 import sys
 import array
 import random
+width = 60
 
 def discuss_whatever2():
-    ShootintheShit = random.randint(0,0)
-    (callable_comp[0](sits_lib[ShootintheShit]))
+    writing = "this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text this is a lot of text"
+    print(textwrap.fill(writing,width))
 
-def the_drink(voyeurism):
-     print("Functional Enough")
-
-comp = ['the_drink']
-sits_lib = ['voyeurism']
+#def wrap_text(writing, width):
+ #   return textwrap.fill(writing, width)
 
 discuss_whatever2()
