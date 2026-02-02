@@ -10,11 +10,12 @@ import random
 #Actual game scenes
 
 def start_game(): #Opening Description
-    print("You are 21, you are living in a mid-sized midwestern town, same one you've always lived in actually. It's November, your university will be")
-    print("starting back up again tomorrow after a short break, you don't have any friends in town, but you've decided that you can't just let life pass you by.")
-    print("To this end you left your phone at home today, you don't expect anyone will notice, it's not like there's anyone who might text. You know that you're")
-    print("not exactly comfortable with silence, so you've loaded up an old mp3 player with music. Today is suppposed to be cold, but hopefully not so cold you'll")
-    print("find yourself completely isolated.")
+    sg01 = "You are 21, you are living in a mid-sized midwestern town, same one you've always lived in actually. It's November, your university " \
+    "will be starting back up again tomorrow after a short break, you don't have any friends in town, but you've decided that you can't just let " \
+    "life pass you by. To this end you left your phone at home today, you don't expect anyone will notice, it's not like there's anyone who might " \
+    "text. You know that you're not exactly comfortable with silence, so you've loaded up an old mp3 player with music. Today is suppposed to be " \
+    "cold, but hopefully not so cold you'll find yourself completely isolated."
+    print(textwrap.fill(sg01,width))
     hand.pop(0)
     add_item('jacket',1)
     add_item('mp3_player',1)
@@ -23,36 +24,48 @@ def start_game(): #Opening Description
     cursce.insert(0,scene_1)
 
 def scene_1():
-    print("Looking into the cup {you} see the final swig of coffee disappear beneath your nose, the light brown is run through with dark splotches of syrup not fully mixed in.")
-    print("You aren't certain of the time, and you intend to keep it that way for the majority of the day. Downing the specialty drink, the phrase \"slemming coffee\" springs")
-    print("to your mind, in the way personal memetics always do. As you set it on its plate the white porcelain lets out a solid clink. You are sitting in your favorite local")
-    print("cafe, officially its name is \"Racy D'lenes Coffee Lounge\", but ever since you were introduced to it, you've only ever called it {Racy's}. You are sitting by the")
-    print("bay windows that make up much of the cafe's front, at the {table} you usually take.")
+    s101 = "Looking into the cup {you} see the final swig of coffee disappear beneath your nose, the light brown is run through with dark " \
+    "splotches of syrup not fully mixed in.You aren't certain of the time, and you intend to keep it that way for the majority of the day. " \
+    "Downing the specialty drink, the phrase \"slemming coffee\" springs to your mind, in the way personal memetics always do. As you set it " \
+    "on its plate the white porcelain lets out a solid clink. You are sitting in your favorite local cafe, officially its name is \"Racy " \
+    "D'lenes Coffee Lounge\", but ever since you were introduced to it, you've only ever called it {Racy's}. You are sitting by the bay " \
+    "windows that make up much of the cafe's front, at the {table} you usually take."
+    print(textwrap.fill(s101,width))
     while True:
-        print("You can feel the caffeine slowing you down, sort of like your head is filling with that back of the throat weight that comes with a deep yawn. You regret having not")
-        print("ordered your drink with decaf.")
+        s102 = "You can feel the caffeine slowing you down, sort of like your head is filling with that back of the throat weight that " \
+        "comes with a deep yawn. You regret having not ordered your drink with decaf."
+        print(textwrap.fill(s102,width))
         action = input("> ").lower().strip()
         if action == "look you":
-            print("You got dressed today with a little more intentionality than usual, but not by much. Your attire is basic, but you know that it's comfortable, and hopefully normal enough")
-            print("not to be noteworthy. You're wearing your jacket, which you think of as something akin to your signature, a black t-shirt which reads \"Something Rotten\" under an image of a character")
-            print("in a videogame, also wearing a black t-shirt with \"Something Rotten\" emblazened across the front, a pair of cuffed dark wash jeans expose the missmatch socks whose patterns")
-            print("stick out from your running shoes.")
+            s103 = "You got dressed today with a little more intentionality than usual, but not by much. Your attire is basic, but you " \
+            "know that it's comfortable, and hopefully normal enough not to be noteworthy. You're wearing your jacket, which you think of " \
+            "as something akin to your signature, a black t-shirt which reads \"Something Rotten\" under an image of a character in a videogame, " \
+            "also wearing a black t-shirt with \"Something Rotten\" emblazened across the front, a pair of cuffed dark wash jeans expose the " \
+            "missmatch socks whose patterns stick out from your running shoes."
+            print(textwrap.fill(s103,width))
             pause()
-            print("Though it's too bright to see your reflection in the window next to you, you know what you look like. Your curly, dark brown hair reaches your shoulders,")
-            print("but only that growing from the top of your head, on the sides and back it barely manages to clear your chin. An odd side effect of the process that lead to your current hairstyle.")
-            print("As for your face, the features which stand out most to you are these: your nose is large and rounded but you'd hesitate to call it bulbous, your eyebrows are what you'd call")
-            print("fuzzy, not exactly wild, but certainly unattended, the inside end of your left brow is oddly thinned and doesn't flow with the rest of the hairs. Your lips are angular, and asymetrical,")
-            print("on one side the upper lip slopes down to meet the edge of your lower lip, and on the other it ends some distance before the edge of your lower lip. Atop all of these features sit a pair")
-            print("of browline glasses, mostly made of thin silver metal, with the browline itself being semi transparent green plastic they got roughed up shortly after you got them so they sit a litle oddly on your face.")
+            s104 = "Though it's too bright to see your reflection in the window next to you, you know what you look like. Your curly, " \
+            "dark brown hair reaches your shoulders, but only that growing from the top of your head, on the sides and back it barely " \
+            "manages to clear your chin. An odd side effect of the process that lead to your current hairstyle. As for your face, the " \
+            "features which stand out most to you are these: your nose is large and rounded but you'd hesitate to call it bulbous, your " \
+            "eyebrows are what you'd call fuzzy, not exactly wild, but certainly unattended, the inside end of your left brow is oddly thinned " \
+            "and doesn't flow with the rest of the hairs. Your lips are angular, and asymetrical, on one side the upper lip slopes down to " \
+            "meet the edge of your lower lip, and on the other it ends some distance before the edge of your lower lip. Atop all of these " \
+            "features sit a pair of browline glasses, mostly made of thin silver metal, with the browline itself being semi transparent green " \
+            "plastic they got roughed up shortly after you got them so they sit a litle oddly on your face."
+            print(textwrap.fill(s104,width))
             pause()
         elif action == "look racy's":
             print("*")
         elif action == "look table":
-            print("On the table sits the now empty mug, formerly the vessel for your preffered drink from Racy's, a \"Willow\", though you struggle to define what exactly it tastes like, it has been")
-            print("your go to order for the past few years, since Jeremiah stopped working as a barista, when he was there your go to was the \"Bree's Knees\" but no one else makes it like he used to")
-            print("the \"Willow\" is a far less subtle drink, so you find that it comes out more consistently well made. As for the table itself, it's unremarkable as an object, a slightly wobbly tall circular")
-            print("surface, flanked on two sides by spinning stools. The only thing that makes it compelling is the specific nostalgia you have tied to it... But today isn't about the past, today is the future!")
-            print("You choose not to dwell on it.")
+            s105 = "On the table sits the now empty mug, formerly the vessel for your preffered drink from Racy's, a \"Willow\", though " \
+            "you struggle to define what exactly it tastes like, it has been your go to order for the past few years, since Jeremiah stopped " \
+            "working as a barista, when he was there your go to was the \"Bree's Knees\" but no one else makes it like he used to the " \
+            "\"Willow\" is a far less subtle drink, so you find that it comes out more consistently well made. As for the table itself, " \
+            "it's unremarkable as an object, a slightly wobbly tall circular surface, flanked on two sides by spinning stools. The only " \
+            "thing that makes it compelling is the specific nostalgia you have tied to it... But today isn't about the past, today is the " \
+            "future! You choose not to dwell on it."
+            print(textwrap.fill(s105,width))
             pause()
         elif action == "inventory" or "inv":
             inv_manage()
@@ -122,11 +135,11 @@ def the_girl(voyeurism):
     print("*")
 def the_fetish(voyeurism):
     print("*")
-def the_saviour(voyeurism):
-    print("Fielding is watching you, she has been the whole time really, but it's starting to get to you. Something about its deep brown eyes makes") #"*"
-    print("you feel a strange sort of conflict. On the one hand you find it aggresive, and honestly a little frightening, but equally there's a")
-    print("sense of security, an almost gitty joy at having your details attended to so carefully. You haven't felt that kind of gaze in a long time.")
-    print("\"What's on your mind?\" Fielding asks, zirs eyeline")
+def the_saviour(voyeurism): #(*)
+    sts_saviour_voyeurism = "Fielding is watching you, she has been the whole time really, but it's starting to get to you. Something " \
+    "about its deep brown eyes makes you feel a strange sort of conflict. On the one hand you find it aggresive, and honestly a little " \
+    "frightening, but equally there's a sense of security, an almost gitty joy at having your details attended to so carefully. You " \
+    "haven't felt that kind of gaze in a long time. \"What's on your mind?\" Fielding asks, zirs eyeline"
 
 #Discussing Relationship w/Companions
 
@@ -143,6 +156,8 @@ def start_screen(): #Start screena
         start_game() 
     elif choice == "help":
         help_screen() 
+    elif choice == "settings":
+        width_set()
     else:
         print("I'm sorry, I don't understand")
         print()
@@ -150,13 +165,14 @@ def start_screen(): #Start screena
 
 def help_screen(): #Player info
     print("               This is Transtextual, if you want to know about why I made it input 'info'!")
-    print("Transtextual is a relatively simple text adventure, the way navigation works will be this, if you want to go to a")
-    print("location mentioned in a description simply write 'go to [location]' if you want to pick up an item, write 'take [item]")
-    print("if you want to use something in the environment write 'use [object], and if you are talking to someone 'ask [subject]'")
-    print("or whatever contextually makes sense as a reply will work, assuming of course I thought of it. I will {highlight} objects")
-    print("you can interact with, and if someone asks you a question I'll tell you what your options are. At anytime in the game you")
-    print("can use the inputs 'inventory', 'save', and 'load' to do what it sounds like the command does. Occasionally the text will stop")
-    print("coming, if this happens, the program is waiting for any input, simply hit enter to continue.")
+    hs01 = "Transtextual is a relatively simple text adventure, the way navigation works will be this, if you want to go to a location " \
+    "mentioned in a description simply write 'go to [location]' if you want to pick up an item, write 'take [item] if you want to use " \
+    "something in the environment write 'use [object], and if you are talking to someone 'ask [subject]' or whatever contextually makes " \
+    "sense as a reply will work, assuming of course I thought of it. I will {highlight} objects you can interact with, and if someone asks " \
+    "you a question I'll tell you what your options are. At anytime in the game you can use the inputs 'inventory', 'save', and 'load' to " \
+    "do what it sounds like the command does. Occasionally the text will stop coming, if this happens, the program is waiting for any " \
+    "input, simply hit enter to continue."
+    print(textwrap.fill(hs01,width))
     print("Do you understand?")
     choice = input("> ").lower().strip()
     if choice == "yes":
@@ -166,21 +182,22 @@ def help_screen(): #Player info
         print()
         start_screen() 
     elif choice == "info":
-        print("I started writing Transtextual in October of 2025, because of a Tumblr post about 'programmer art' and 'artist programming'")
-        print("for some reason I found the idea of trying to create a game as someone with no experience very exciting, I'm sure")
-        print("that's true for a lot of first time developers. Crucially though I decided I wasn't going to actually learn how to")
-        print("code, instead I was going to bodge it together as poorly as possible, initially I wanted to create this in BASIC")
-        print("turns out that there aren't a whole lot of guides on how to use an outdated language like that, so Transtextual is")
-        print("written in Python. If you want to know about how I wrote the game, 'ask code' or if you want to know about the") 
-        print("narrative 'ask narrative' on the help screen! You can input whatever to get back there.")
+        hs02 = "I started writing Transtextual in October of 2025, because of a Tumblr post about 'programmer art' and 'artist programming' " \
+        "for some reason I found the idea of trying to create a game as someone with no experience very exciting, I'm sure that's true for a " \
+        "lot of first time developers. Crucially though I decided I wasn't going to actually learn how to code, instead I was going to bodge " \
+        "it together as poorly as possible, initially I wanted to create this in BASIC turns out that there aren't a whole lot of guides on " \
+        "how to use an outdated language like that, so Transtextual is written in Python. If you want to know about how I wrote the game, 'ask " \
+        "code' or if you want to know about the narrative 'ask narrative' on the help screen! You can input whatever to get back there."
+        print(textwrap.fill(hs02,width))
         pause()
     elif choice == "ask code":
-        print("Due to my desire not to actually learn how to program, specifically because I think it would be funny I have had to")
-        print("make do with many bodge solutions, for instance here every distinct line, is an unique print command, if there is a")
-        print("better way to do this, well it's not one I know. Additionally the source code of the game is structured so that")
-        print("anytime a scene is being described to you, I actually had to create and reference it earlier in the code, essentially")
-        print("that means that anytime you open Transtextual the game reads and remembers every single possible scene, before it even")
-        print("introduces itself! Isn't that neat! If you want more examples of my bad design hit enter, or to escape type 'home'")
+        hs03 = "Due to my desire not to actually learn how to program, specifically because I think it would be funny I have had to make " \
+        "do with many bodge solutions, for instance here every distinct line, is an unique print command, if there is a better way to do " \
+        "this, well it's not one I know. Additionally the source code of the game is structured so that anytime a scene is being described " \
+        "to you, I actually had to create and reference it earlier in the code, essentially that means that anytime you open Transtextual " \
+        "the game reads and remembers every single possible scene, before it even introduces itself! Isn't that neat! If you want more " \
+        "examples of my bad design hit enter, or to escape type 'home'"
+        print(textwrap.fill(hs03,width))
         choice = input("> ").lower().strip() #this bit allows an empty input to continue onwards, or the input of 'home' to escape
         if choice == "":
              print()
@@ -205,7 +222,7 @@ def code_issues(): #Diary of Bodge
     print("of writing, I don't actually know if it will work once the game gets more complex, natuarally that is part of the appeal of this project to me it's just a lot")
     print("of work to redo if I royally screwed it up.")
     pause()
-    print("Currently as I design this each line is created as it's own independent print action, which I want to change, it occurs to me know though that, I should definitely")
+    print("Currently as I design this each line is created as it's own independent print action, which I want to change, it occurs to me now though, that I should definitely")
     print("change my workflow now so I don't have to go change everything all at once later.")
     start_screen()
 
@@ -339,15 +356,18 @@ def skirt(): #Skirt Interaction Model
         inv_manage()
 
 def jacket(): #First Time Jacket Interaction
-    print("Your trusty jacket, you've been wearing it since highschool and it shows. Mustard darning lines its edges in a desperate effort to hold off entropy")
-    print("it feels deeply comfortable on you, you appreciate how it effectively hides your figure, and its many {pockets}. It was your greatest asset during")
-    print("that shoplifting phase you went through in highschool. The jacket is, as much as you love it, kind of a piece of shit, some fast fashion bullshit that")
-    print("you didn't buy, but found in a closet. You'll never be able to replace it exactly. Especially now that its once vaguely green, vaguely brown canvas")
-    print("outershell has faded and sunbleached into a nigh unreplicable hue.")
+    j101 = "Your trusty jacket, you've been wearing it since highschool and it shows. Mustard darning lines its edges in a desperate " \
+    "effort to hold off entropy it feels deeply comfortable on you, you appreciate how it effectively hides your figure, and its many " \
+    "{pockets}. It was your greatest asset during that shoplifting phase you went through in highschool. The jacket is, as much as you " \
+    "love it, kind of a piece of shit, some fast fashion bullshit that you didn't buy, but found in a closet. You'll never be able to " \
+    "replace it exactly. Especially now that its once vaguely green, vaguely brown canvas outershell has faded and sunbleached into a " \
+    "nigh unreplicable hue."
+    print(textwrap.fill(j101,width))
     choice = input("> ").lower().strip()
     if choice == "use pockets":
-        print("You rummage through the many pockets of your jacket searching for anything you might have left in it over summer. Across its 9 pockets you find a folded")
-        print("note, your pocket scissors, a pen, a pocket sized notebook, $7, a large coin, and a usb stick")
+        j102 = "You rummage through the many pockets of your jacket searching for anything you might have left in it over summer. Across" \
+        " its 9 pockets you find a folded note, your pocket scissors, a pen, a pocket sized notebook, $7, a large coin, and a usb stick"
+        print(textwrap.fill(j102,width))
         pause()
         remove_item('jacket',1)
         add_item('your jacket',1)
@@ -364,8 +384,10 @@ def jacket(): #First Time Jacket Interaction
     elif choice == 'back':
         inv_manage()
     elif choice == 'remove jacket':
-        print("You're not going to do that, she would never do that. Look, I'm not going to let /you/ hurt her, I mean she's going to hurt through this experience, but I")
-        print("refuse to let you take away her support maliciously, if you keep trying, I will be back and we're going to have a long conversation, do you understand me?")
+        j103 = "You're not going to do that, she would never do that. Look, I'm not going to let /you/ hurt her, I mean she's going " \
+        "to hurt through this experience, but I refuse to let you take away her support maliciously, if you keep trying, I will be " \
+        "back and we're going to have a long conversation, do you understand me?"
+        print(textwrap.fill(j103,width))
         choice = input("< ").lower().strip()
         if choice == 'yes':
           print("okay, good.")
@@ -385,36 +407,41 @@ def jacket(): #First Time Jacket Interaction
         jacket()
 
 def yourjacket(): #Every other time you look at jacket
-    print("Your trusty jacket, you've been wearing it since highschool and it shows. Mustard darning lines its edges in a desperate effort to hold off entropy")
-    print("it feels deeply comfortable on you, and you appreciate how it effectively hides your figure, and its many pockets. It was your greatest asset during")
-    print("that shoplifting phase you went through in highschool. The jacket is, as much as you love it, kind of a piece of shit, some fast fashion bullshit that")
-    print("you didn't buy, but found in a closet. You'll never be able to replace it exactly. Especially now that its once, vaguely green, vaguely brown canvas")
-    print("outershell has faded and sunbleached into an nigh unreplicable hue.")
+    j201 = "Your trusty jacket, you've been wearing it since highschool and it shows. Mustard darning lines its edges in a desperate" \
+    " effort to hold off entropy it feels deeply comfortable on you, and you appreciate how it effectively hides your figure, and its" \
+    " many pockets. It was your greatest asset during that shoplifting phase you went through in highschool. The jacket is, as much as " \
+    "you love it, kind of a piece of shit, some fast fashion bullshit that you didn't buy, but found in a closet. You'll never be able " \
+    "to replace it exactly. Especially now that its once, vaguely green, vaguely brown canvas outershell has faded and sunbleached into " \
+    "an nigh unreplicable hue."
+    print(textwrap.fill(j201,width))
     pause()
     inv_manage()
 
 def mp3player(): #mp3 player which ideally comes with a referable list to pull from of songs
-    print("An old mp3 player, you've had it since you were very young, it's not exactly a modern piece of technology, but you have good memories attached to")
-    print("it. It's red, about 1 by 3 inches in size. Apparently produced by a company called COBY, but you don't know anything else about them. You set it to")
-    print("shuffle today.")
+    mp301 = "An old mp3 player, you've had it since you were very young, it's not exactly a modern piece of technology, but you have " \
+    "good memories attached to it. It's red, about 1 by 3 inches in size. Apparently produced by a company called COBY, but you don't " \
+    "know anything else about them. You set it to shuffle today."
+    print(textwrap.fill(mp301,width))
     T = random.randint(1,50)
     print("The mp3 player is currently playing:"); print(mp3[T])
     pause()
     inv_manage()
 
 def foldednote():
-    print("An old note you keep in your jacket, a gift from the longest friendship you still have, and best you've ever had,")
-    print("its content is a consistent source of comfort, occasionally a source of pain, but deeply important to you. She was")
-    print("there when you started asking questions, and provided the greatest support as you began to understand yourself. It")
-    print("wouldn't be an exageration to say that she is the person you love most in this world, and while you have no way to")
-    print("prove it, you know there is a time where she would have said the same of you. Since then she moved to Alaska. You")
-    print("can't help but feel a little betrayed by her, because she left you alone in this town, like that.")
+    fn01 = "An old note you keep in your jacket, a gift from the longest friendship you still have, and best you've ever had, its " \
+    "content is a consistent source of comfort, occasionally a source of pain, but deeply important to you. She was there when you " \
+    "started asking questions, and provided the greatest support as you began to understand yourself. It wouldn't be an exageration " \
+    "to say that she is the person you love most in this world, and while you have no way to prove it, you know there is a time where " \
+    "she would have said the same of you. Since then she moved to Alaska. You can't help but feel a little betrayed by her, because " \
+    "she left you alone in this town, like that."
+    print(textwrap.fill(fn01,width))
     pause()
     inv_manage()
 
 def pocketscissors():
-    print("A pair of fold away scissors, in your experience people often find it weird that you always have scissors on you,")
-    print("but that usually comes roughly 30 seconds before they realize that they need a cutting instrument.")
+    ps01 = "A pair of fold away scissors, in your experience people often find it weird that you always have scissors on you, but " \
+    "that usually comes roughly 30 seconds before they realize that they need a cutting instrument."
+    print(textwrap.fill(ps01,width))
     pause()
     inv_manage()
 
@@ -424,22 +451,25 @@ def pen():
     inv_manage()
 
 def money():
-    print("Money, cash, it can be used to purchase goods and services, you could get coffee, or access to some kind of private space. You don't") 
-    print("usually have a lot of money, given that you've been unemployed for almost a full year, but it should be okay, today isn't really about") 
-    print("shopping.")
+    m01 = "Money, cash, it can be used to purchase goods and services, you could get coffee, or access to some kind of private" \
+    " space. You don't usually have a lot of money, given that you've been unemployed for almost a full year, but it should be " \
+    "okay, today isn't really about shopping."
+    print(textwrap.fill(m01,width))
     pause()
     inv_manage()
 
 def largecoin():
-    print("A fairy coin, technically on loan from a friend who got it at a rennaisance faire, she was showing it to you and as she")
-    print("was talking, you found yourself fidgeting with it, spinning it through your fingers. At the time she said you could have")
-    print("it, but you are unwilling to assume that means to keep it long term.")
+    lc01 = "A fairy coin, technically on loan from a friend who got it at a rennaisance faire, she was showing it to you and as " \
+    "she was talking, you found yourself fidgeting with it, spinning it through your fingers. At the time she said you could have " \
+    "it, but you are unwilling to assume that means to keep it long term."
+    print(textwrap.fill(lc01,width))
     pause()
     inv_manage()
 
 def usbstick():
-    print("A USB stick, capacity: 16 GB, you use it for printing homework, or keeping backups of important things, right now if you recall it") 
-    print("should be empty, but without access to a computer it is all but useless.")
+    usb01 = "A USB stick, capacity: 16 GB, you use it for printing homework, or keeping backups of important things, right now " \
+    "if you recall it should be empty, but without access to a computer it is all but useless."
+    print(textwrap.fill(usb01,width))
     pause()
     inv_manage()
 
@@ -452,44 +482,55 @@ def notebook():
         load_game()
     
 def oracle_cards():
-    print("You deftly pull out the deck of cards and pull the rubber band from binding the stack together onto your wrist, you quickly shuffle")
-    print("while focusing on the strange day you're going through. Performing the requisite twisting to ensure a true shuffle for the oracle cards.")
-    print("Though you aren't following any kind of specific spread, you figure that the first card should refer to yourself, the second to someone")
-    print("important for your day, and the third to the current state of yourself and the world.")
+    oc01 = "You deftly pull out the deck of cards and pull the rubber band from binding the stack together onto your wrist, you " \
+    "quickly shuffle while focusing on the strange day you're going through. Performing the requisite twisting to ensure a true " \
+    "shuffle for the oracle cards. Though you aren't following any kind of specific spread, you figure that the first card should " \
+    "refer to yourself, the second to someone important for your day, and the third to the current state of yourself and the world."
+    print(textwrap.fill(oc01,width))
     print("You go to draw the first card...")
     pause()
     if grth.count(1) in range(0,14): #upside down
-        print("You pull a card with 'III - THE EMPRESS' emboldened across what would be the bottom if it were not upside down, the bulk of the card is")
-        print("dedicated to an illustration of a woman sitting on a pink draped bed. Legs lifted so as to show the bottom of her bare thighs, she is")
-        print("dressed in a thin white grecian dress, through which you can see the soft outlines of her body. A pair of blue snakes twist up her forearms")
-        print("and in her right hand she holds a mirror. Her rich brown hair is done in braids, and upside down like this her expression seems to be an")
-        print("almost mocking smile, like she knows something you haven't quite figured out yet.")
+        ocgrth01 = "You pull a card with 'III - THE EMPRESS' emboldened across what would be the bottom if it were not upside down, the " \
+        "bulk of the card is dedicated to an illustration of a woman sitting on a pink draped bed. Legs lifted so as to show the " \
+        "bottom of her bare thighs, she is dressed in a thin white grecian dress, through which you can see the soft outlines of her " \
+        "body. A pair of blue snakes twist up her forearms and in her right hand she holds a mirror. Her rich brown hair is done in " \
+        "braids, and upside down like this her expression seems to be an almost mocking smile, like she knows something you haven't " \
+        "quite figured out yet."
+        print(textwrap.fill(ocgrth01,width))
         pause()
-        print("With the card upside down your eye is instinctively drawn to where her legs cross at the ankle, obscuring her groin. All in all from this")
-        print("angle something about the illustration feels unbalanced and odd, like she might slip off the card and dissapear forever.")
+        ocgrth02 = "With the card upside down your eye is instinctively drawn to where her legs cross at the ankle, obscuring her " \
+        "groin. All in all from this angle something about the illustration feels unbalanced and odd, like she might slip off the " \
+        "card and dissapear forever."
+        print(textwrap.fill(ocgrth02,width))
         pause()
-        print("You know that the upside down Empress often represents hardships, scarecity, bareness and neediness, this does very little to bring you")
-        print("comfort.")
+        ocgrth03 = "You know that the upside down Empress often represents hardships, scarecity, bareness and neediness, this does " \
+        "very little to bring you comfort."
+        print(textwrap.fill(ocgrth03,width))
         pause()
     elif grth.count(1) in range(15,200):
-        print("You pull a card with 'III - THE EMPRESS' emboldened across the bottom, the bulk of the card is dedicated to an illustration of a woman")
-        print("sitting on a pink draped bed. Legs lifted so as to show the bottom of her bare thighs, she is dressed in a thin white grecian dress,")
-        print("through which you can see the soft outlines of her body. A pair of blue snakes twist up her forearms and in her right hand she holds a")
-        print("mirror. Her rich brown hair is done in braids, and rightside up you see her expression as more comfortably assured. Like she's looking")
-        print("at something going the way she figures it should be.")
+        ocgrth04 = "You pull a card with 'III - THE EMPRESS' emboldened across the bottom, the bulk of the card is dedicated to " \
+        "an illustration of a woman sitting on a pink draped bed. Legs lifted so as to show the bottom of her bare thighs, she is " \
+        "dressed in a thin white grecian dress, through which you can see the soft outlines of her body. A pair of blue snakes twist " \
+        "up her forearms and in her right hand she holds a mirror. Her rich brown hair is done in braids, and rightside up you see " \
+        "her expression as more comfortably assured. Like she's looking at something going the way she figures it should be."
+        print(textwrap.fill(ocgrth04,width))
         pause()
-        print("With the card rightside up she feels sturdy and confident, secure in her position, and comfortable no less. Your eye is naturally drawn")
-        print("to her face where oddly you notice some features you share with her, that not quite bulbous nose you're used to seeing in the mirror,") 
-        print("similarly thin eyes which you used to blame on others having difficulty reading you, but now seem so expressive on the empress.")
-        print("You realize she sort of looks like how you wish you looked.")
+        ocgrth05 = "With the card rightside up she feels sturdy and confident, secure in her position, and comfortable no less. Your " \
+        "eye is naturally drawn to her face where oddly you notice some features you share with her, that not quite bulbous nose you're " \
+        "used to seeing in the mirror, similarly thin eyes which you used to blame on others having difficulty reading you, but now seem " \
+        "so expressive on the empress. You realize she sort of looks like how you wish you looked."
+        print(textwrap.fill(ocgrth05,width))
         pause()
-        print("You know that the rightside up Empress often represents nurturing, abundance, the feminine divine, and sovreignty over the natural order.") 
-        print("That feels good, if those are the traits you've earned today, then maybe life will start to get a little easier going forward.")
+        ocgrth06 = "You know that the rightside up Empress often represents nurturing, abundance, the feminine divine, and sovreignty " \
+        "over the natural order. That feels good, if those are the traits you've earned today, then maybe life will start to get a " \
+        "little easier going forward."
+        print(textwrap.fill(ocgrth06,width))
         pause()
     else:
-        print("You pull a rules card from the deck, it explains that your current growth as an individual stored as a number of appended '1' digits")
-        print("in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the mechanics")
-        print("of the game.")
+        ocgrth07 = "You pull a rules card from the deck, it explains that your current growth as an individual stored as a number of " \
+        "appended '1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically " \
+        "possible within the mechanics of the game."
+        print(textwrap.fill(ocgrth07,width))
         pause()
     print("You go to draw the second card...")
     if comp[0] == 'no_one':
@@ -498,94 +539,124 @@ def oracle_cards():
             print("You manage to fumble and pull 5 cards. Do you want to {look} at all of them or just {move on}?")
             choice = input('> ').lower().strip()
             if choice == 'look' or 'look at cards' or 'look at all of them' or 'yes':
-                print("The five cards end up face down in your hand, it's hard to say if you should flip them horizontally or vertically, you decide to flip")
-                print("them without any respect to orinetation, afterall it was a mistake to pull this many at all, what the cards mean won't be all that")
-                print("useful anyways.")
+                occomp01 = "The five cards end up face down in your hand, it's hard to say if you should flip them horizontally or " \
+                "vertically, you decide to flip them without any respect to orinetation, afterall it was a mistake to pull this many at " \
+                "all, what the cards mean won't be all that useful anyways."
+                print(textwrap.fill(occomp01,width))
                 pause()
-                print("The first of the five you flip to look at is labeled at the bottom as '● ace of cups ●' much of the card is dedicated to an image of a")
-                print("hand sticking out of the placid surface of water, holding a chalice, in which there is a large complex wave.")
+                occomp02 = "The first of the five you flip to look at is labeled at the bottom as '● ace of cups ●' much of the card is " \
+                "dedicated to an image of a hand sticking out of the placid surface of water, holding a chalice, in which there is a large " \
+                "complex wave."
+                print(textwrap.fill(occomp02,width))
                 pause()
-                print("The next you flip has a red border all around the image, in the border are a few blocks of text, going clockwise from the top left corner")
-                print("the text reads 'CHALICES COPAS 9 COPPE COUPES BEKERS KELCHE' within the red border there is an illustration of two figures on a bench,")
-                print("a man and a woman. The man has a sheet wrapped around, his lower half. While the woman is dressed only in thin semi-transparent light grey")
-                print("underwear. They sit seemingly entranced by each other, hands entangled together.")
+                occomp03 = "The next you flip has a red border all around the image, in the border are a few blocks of text, going clockwise " \
+                "from the top left corner the text reads 'CHALICES COPAS 9 COPPE COUPES BEKERS KELCHE' within the red border there is an " \
+                "illustration of two figures on a bench, a man and a woman. The man has a sheet wrapped around, his lower half. While the " \
+                "woman is dressed only in thin semi-transparent light grey underwear. They sit seemingly entranced by each other, hands " \
+                "entangled together."
+                print(textwrap.fill(occomp03,width))
                 pause()
-                print("The next card you flip has a black border, in the top left is a downward pointing triangle in which is the numeral '2', in the top left")
-                print("you see a block of text which reads 'WATER WASSER EAU AGUA' in the bottom left is the text 'ACQUA' and in the bottom right is printed")
-                print("'♀ ♋︎' within the black border is an illustration of two figures, a man and a woman wading through waste deep water. The man has his arms")
-                print("wrapped around the woman's neck almost like he's choking her, this reading is corroborated by the woman's poise and face, she's reaching")
-                print("out, with an expression of desperation. She's wearing a thin brown blouse, from which her breasts are valiantly attempting to escape, a")
-                print("mirror of their keepers desperation.")
+                occomp04 = "The next card you flip has a black border, in the top left is a downward pointing triangle in which is the numeral " \
+                "'2', in the top left you see a block of text which reads 'WATER WASSER EAU AGUA' in the bottom left is the text 'ACQUA' and " \
+                "in the bottom right is printed '♀ ♋︎' within the black border is an illustration of two figures, a man and a woman wading " \
+                "through waste deep water. The man has his arms wrapped around the woman's neck almost like he's choking her, this reading " \
+                "is corroborated by the woman's poise and face, she's reaching out, with an expression of desperation. She's wearing a thin " \
+                "brown blouse, from which her breasts are valiantly attempting to escape, a mirror of their keepers desperation."
+                print(textwrap.fill(occomp04,width))
                 pause()
-                print("You flip the third card of the bundle, it has a maroon border, at the top and bottom, on a an illustration of a brass plate there is the")
-                print("numeral '6'. The illustartion consists of a pair of figures. A man and a woman, the man is almost entirely obscured as the woman sits on")
-                print("his lap. Her dark red dress is riding up her legs exposing her thighs, on her left thigh lays the mans hand. The dress is entirely loosed")
-                print("from the top, her breasts are exposed, wrapped by her arms with which she clings to herself. Behind the pair of figures leaning against")
-                print("the wall behind them there are six wooden staffs.")
+                occomp05 = "You flip the third card of the bundle, it has a maroon border, at the top and bottom, on a an illustration of a " \
+                "brass plate there is the numeral '6'. The illustartion consists of a pair of figures. A man and a woman, the man is almost " \
+                "entirely obscured as the woman sits on his lap. Her dark red dress is riding up her legs exposing her thighs, on her left " \
+                "thigh lays the mans hand. The dress is entirely loosed from the top, her breasts are exposed, wrapped by her arms with which " \
+                "she clings to herself. Behind the pair of figures leaning against the wall behind them there are six wooden staffs."
+                print(textwrap.fill(occomp05,width))
                 pause()
-                print("The final of the five cards you flip is nearly taken up entirely by its illustration, barring two small symbols at the bottom, the numeral")
-                print("'3', and a pictograph of a sword. The illustration is of a woman with dark brown hair, she is dressed in armor and a cloak. She sits facing")
-                print("away from the viewer, her legs folded beneath her. She sits in a puddle of blood, its source obvious as the woman appears to be drawing a")
-                print("a sword out of her bleeding chest, on the wall behind her two more swords hang.")
+                occomp06 = "The final of the five cards you flip is nearly taken up entirely by its illustration, barring two small symbols " \
+                "at the bottom, the numeral '3', and a pictograph of a sword. The illustration is of a woman with dark brown hair, she is " \
+                "dressed in armor and a cloak. She sits facing away from the viewer, her legs folded beneath her. She sits in a puddle of " \
+                "blood, its source obvious as the woman appears to be drawing a sword out of her bleeding chest, on the wall behind her " \
+                "two more swords hang."
+                print(textwrap.fill(occomp06,width))
                 pause()
             elif choice == 'move on' or 'no':
                 pass
         elif D == 5: #the girl
-            print("You pull a card with a black border, in the top left is a downward pointing triangle in which is the numeral '2', in the top left")
-            print("you see a block of text which reads 'WATER WASSER EAU AGUA' in the bottom left is the text 'ACQUA' and in the bottom right is printed")
-            print("'♀ ♋︎' within the black border is an illustration of two figures, a man and a woman wading through waste deep water. The man has his arms")
-            print("wrapped around the woman's neck almost like he's choking her, this reading is corroborated by the woman's poise and face, she's reaching")
-            print("out, with an expression of desperation. She's wearing a thin brown blouse, from which her breasts are valiantly attempting to escape, a")
-            print("mirror of their keepers desperation.")
+            ocnctg01 = "You pull a card with a black border, in the top left is a downward pointing triangle in which is the numeral '2', " \
+            "in the top left you see a block of text which reads 'WATER WASSER EAU AGUA' in the bottom left is the text 'ACQUA' and in the " \
+            "bottom right is printed '♀ ♋︎' within the black border is an illustration of two figures, a man and a woman wading through " \
+            "waste deep water. The man has his arms wrapped around the woman's neck almost like he's choking her, this reading is " \
+            "corroborated by the woman's poise and face, she's reaching out, with an expression of desperation. She's wearing a thin brown " \
+            "blouse, from which her breasts are valiantly attempting to escape, a mirror of their keepers desperation."
+            print(textwrap.fill(ocnctg01,width))
         elif D == 4: #the statue
-            print("You pull a card which is labeled at the bottom as '● ace of cups ●' much of the card is dedicated to an image of a hand sticking out of")
-            print("the placid surface of water, holding a chalice, in which there is a large complex wave.")
+            ocncts01 = "You pull a card which is labeled at the bottom as '● ace of cups ●' much of the card is dedicated to an image of " \
+            "a hand sticking out of the placid surface of water, holding a chalice, in which there is a large complex wave."
+            print(textwrap.fill(ocncts01,width))
         elif D == 3: #the drink
-            print("You pull a card which is nearly taken up entirely by its illustration, barring two small symbols at the bottom, the numeral '3', and a")
-            print("pictograph of a sword. The illustration is of a woman with dark brown hair, she is dressed in armor and a cloak. She sits facing away")
-            print("from the viewer, her legs folded beneath her. She sits in a puddle of blood, its source obvious as the woman appears to be drawing a")
-            print("sword out of her bleeding chest, on the wall behind her two more swords hang.")
+            ocnctd01 = "You pull a card which is nearly taken up entirely by its illustration, barring two small symbols at the bottom, " \
+            "the numeral '3', and a pictograph of a sword. The illustration is of a woman with dark brown hair, she is dressed in armor " \
+            "and a cloak. She sits facing away from the viewer, her legs folded beneath her. She sits in a puddle of blood, its source " \
+            "obvious as the woman appears to be drawing a sword out of her bleeding chest, on the wall behind her two more swords hang."
+            print(textwrap.fill(ocnctd01,width))
         elif D == 2: #the saviour
-            print("You pull a card which has a red border all around the image, in the border are a few blocks of text, going clockwise from the top left corner")
-            print("the text reads 'CHALICES COPAS 9 COPPE COUPES BEKERS KELCHE' within the red border there is an illustration of two figures on a bench, a man")
-            print("and a woman. The man has a sheet wrapped around, his lower half. While the woman is dressed only in thin semi-transparent light grey underwear.")
-            print("They sit seemingly entranced by each other, hands entangled together.")
+            ocncts01 = "You pull a card which has a red border all around the image, in the border are a few blocks of text, going " \
+            "clockwise from the top left corner the text reads 'CHALICES COPAS 9 COPPE COUPES BEKERS KELCHE' within the red border " \
+            "there is an illustration of two figures on a bench, a man and a woman. The man has a sheet wrapped around, his lower " \
+            "half. While the woman is dressed only in thin semi-transparent light grey underwear. They sit seemingly entranced by each " \
+            "other, hands entangled together."
+            print(textwrap.fill(ocncts01,width))
         elif D == 1: #the fetish
-            print("You pull a card which has a maroon border, at the top and bottom, on a an illustration of a brass plate there is the numeral '6'. The illustartion")
-            print("consists of a pair of figures. A man and a woman, the man is almost entirely obscured as the woman sits on his lap. Her dark red dress is riding up") 
-            print("her legs exposing her thighs, on her left thigh lays the mans hand. The dress is entirely loosed from the top, her breasts are exposed, wrapped by")
-            print("her arms with which she clings to herself. Behind the pair of figures leaning against the wall behind them there are six wooden staffs.")
+            ocnctf01 = "You pull a card which has a maroon border, at the top and bottom, on a an illustration of a brass plate there is " \
+            "the numeral '6'. The illustartion consists of a pair of figures. A man and a woman, the man is almost entirely obscured as " \
+            "the woman sits on his lap. Her dark red dress is riding up her legs exposing her thighs, on her left thigh lays the mans " \
+            "hand. The dress is entirely loosed from the top, her breasts are exposed, wrapped by her arms with which she clings to " \
+            "herself. Behind the pair of figures leaning against the wall behind them there are six wooden staffs."
+            print(textwrap.fill(ocnctf01,width))
     elif comp[0] == 'the_girl': #The Hierophant
         if girl_grth.count(1) in range(0,14): #upside down
-            print("You pull a card with a black border, it's upside down, the border has several blocks of text, if it were right side up, starting in the top left the text reads")
-            print("'V  THE PRIEST DER PRIESTER LE PRETRE EL SACERDOTE ♉︎ IL SACERDOTE' within the border there is an illustration of a woman crouching against a pillar with her")
-            print("knees splayed, she is nude from the waist down. She wears a low cut, black spotted, blouse. A cardinals hat obscurs her crotch, he is looking towards her. Her")
-            print("her arms are tucked behind her back presumably supporting her from behind. Her pitch black hair billows and pleasure seems to erupt across her face.")
+            ocggrth01 = "You pull a card with a black border, it's upside down, the border has several blocks of text, if it were right " \
+            "side up, starting in the top left the text reads 'V  THE PRIEST DER PRIESTER LE PRETRE EL SACERDOTE ♉︎ IL SACERDOTE' within " \
+            "the border there is an illustration of a woman crouching against a pillar with her knees splayed, she is nude from the waist " \
+            "down. She wears a low cut, black spotted, blouse. A cardinals hat obscurs her crotch, he is looking towards her. Her arms " \
+            "are tucked behind her back presumably supporting her from behind. Her pitch black hair billows and pleasure seems to erupt " \
+            "across her face."
+            print(textwrap.fill(ocggrth01,width))
             pause()
-            print("With the card upside down, the cardinals poise seems to be one of pause and appreciation towards the woman's provocation. The inverted view casts the rounded")
-            print("top of the cardinals hat as a phallus approaching the woman's vagina, the angle creates a look of tension, as though her legs are going to burst with the difficulty")
-            print("of her task.")
+            ocggrth02 = "With the card upside down, the cardinals poise seems to be one of pause and appreciation towards the woman's " \
+            "provocation. The inverted view casts the rounded top of the cardinals hat as a phallus approaching the woman's vagina, " \
+            "the angle creates a look of tension, as though her legs are going to burst with the difficulty of her task."
+            print(textwrap.fill(ocggrth02,width))
             pause()
-            print("The deck this card is from, varies slightly from convention, but you know the card should correspond roughly to 'The Hierophant' which when inverted, you recall")
-            print("represents arrogance, elitism, hypocrisy, and charlatanism. It brings you little joy to think of Sophie in this way, surely if she noticed she would have something")
-            print("to say about the provocative imagery on the card. You aren't in the mood to be judged right now, so you slip the card under your Empress before Sophie catches on.")
+            ocggrth03 = "The deck this card is from, varies slightly from convention, but you know the card should correspond roughly " \
+            "to 'The Hierophant' which when inverted, you recall represents arrogance, elitism, hypocrisy, and charlatanism. It brings " \
+            "you little joy to think of Sophie in this way, surely if she noticed she would have something to say about the provocative " \
+            "imagery on the card. You aren't in the mood to be judged right now, so you slip the card under your Empress before Sophie " \
+            "catches on."
+            print(textwrap.fill(ocggrth03,width))
             pause()
         elif girl_grth.count(1) in range(15,200): #upright
-            print("You pull a card with a black border, the border has several blocks of text within it, starting in the top left and moving clockwise the text reads")
-            print("'V  THE PRIEST DER PRIESTER LE PRETRE EL SACERDOTE ♉︎ IL SACERDOTE' within the border there is an illustration of a woman crouching against a pillar with her")
-            print("knees splayed, she is nude from the waist down. She wears a low cut, black spotted, blouse. A cardinals hat obscurs her crotch, he is looking towards her. Her")
-            print("pitch black hair billows, and her arms are tucked behind her back presumably supporting her from behind.")
+            ocggrth04 = "You pull a card with a black border, the border has several blocks of text within it, starting in the top " \
+            "left and moving clockwise the text reads 'V  THE PRIEST DER PRIESTER LE PRETRE EL SACERDOTE ♉︎ IL SACERDOTE' within the " \
+            "border there is an illustration of a woman crouching against a pillar with her knees splayed, she is nude from the waist " \
+            "down. She wears a low cut, black spotted, blouse. A cardinals hat obscurs her crotch, he is looking towards her. Her pitch " \
+            "black hair billows, and her arms are tucked behind her back presumably supporting her from behind."
+            print(textwrap.fill(ocggrth04,width))
             pause()
-            print("With the card upside down, the cardinals pose reads as shock at the womans provacativity. Where once her expression seemed to read as pleasure it now looks to you")
-            print("more like exertion. Perhaps she is not engaged in a sexual act, but one of desperation.")
+            ocggrth05 = "With the card upside down, the cardinals pose reads as shock at the womans provacativity. Where once her " \
+            "expression seemed to read as pleasure it now looks to you more like exertion. Perhaps she is not engaged in a sexual " \
+            "act, but one of desperation."
+            print(textwrap.fill(ocggrth05,width))
             pause()
-            print("The deck this card is from, varies slightly from convention, but you know the card should correspond roughly to 'The Hierophant' which when upright, you recall")
-            print("representing wisdom, authority, knowledge, doctrine, and advice.") #connect to Sophie's development
+            ocggrth06 = "The deck this card is from, varies slightly from convention, but you know the card should correspond " \
+            "roughly to 'The Hierophant' which when upright, you recall representing wisdom, authority, knowledge, doctrine, " \
+            "and advice." #connect to Sophie's development
+            print(textwrap.fill(ocggrth06,width))
             pause()
         else:
-            print("You pull a rules card from the deck, it explains that the development of your relationship with Sophie stored as a number of appended")
-            print("'1' digits in an array has managed to fall outside the range of 0 to 200, something which should not be physically possible within the")
-            print("mechanics of the game.")
+            ocggrth07 = "You pull a rules card from the deck, it explains that the development of your relationship with Sophie " \
+            "stored as a number of appended '1' digits in an array has managed to fall outside the range of 0 to 200, something " \
+            "which should not be physically possible within the mechanics of the game."
+            print(textwrap.fill(ocggrth07,width))
             pause()
     elif comp[0] == 'the_statue': #The Lovers
         if statue_grth.count(1) in range(0,14): #upright
@@ -776,6 +847,16 @@ def load_game(): #Load Function "*"
     with open("savefile.txt", "r") as f:
         inventory = f.read().split(",")
 
+def width_set():
+    print("The default text width is '150', after choosing a new value, an example text will be displayed.")
+    value = input("Input New Value> ")
+    textwidth.pop(0)
+    textwidth.insert(0,value)
+    example_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel aliquam urna. Fusce suscipit gravida nisi, id placerat massa imperdiet sit amet. Mauris venenatis, quam et laoreet euismod, risus augue efficitur lectus, sit amet interdum ante massa in mauris. Vivamus ut est et nisl auctor rutrum eget ut mauris. Fusce ullamcorper, dui interdum interdum ultrices, lacus magna luctus risus, eu eleifend nisl nunc a est. Morbi in ex consectetur, sagittis est sit amet, feugiat turpis. Nam quis tincidunt dui. Morbi sodales auctor mauris vitae mattis. Vivamus vitae ullamcorper erat, sit amet faucibus arcu. Integer vitae tempus urna, id egestas libero. Duis nec lacus vehicula, sollicitudin est sed, tincidunt magna. Integer tincidunt nisi id justo consectetur, a ultrices nibh hendrerit. Morbi condimentum consequat tristique. Etiam imperdiet massa sit amet justo fringilla, ut mollis nisi luctus. "
+    print(textwrap.fill(example_text,width[0]))
+    pause()
+    start_screen()
+
 cursce = [start_game]
 car_loc = car_parked[0]
 car_spot = ['home']
@@ -790,6 +871,7 @@ inventory = {}
 known_loc ={}
 hand = ['mp3 player'] #now we have an object that we can check against anytime the player opts to 'use'
 outfit = ['default']
+width = [150]
 
 #Companion development, card flips 
 girl_grth = []
@@ -804,7 +886,7 @@ grth = []
 start_screen() #has to be the very end. All "def scene():" must occur in the code before they are reffered to
 
 #Notes:
-#Now that this project is starting to have significant size, use "*" to find areas where I still need to write something, at leas that I know of
+#Now that this project is starting to have significant size, use "*" to find areas where I still need to write something, at least that I know of
 
 
 def title():
