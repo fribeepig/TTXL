@@ -24,16 +24,18 @@ def start_game(): #Opening Description
     cursce.insert(0,scene_1)
 
 def scene_1():
-    s101 = "Looking into the cup {you} see the final swig of coffee disappear beneath your nose, the light brown is run through with dark " \
-    "splotches of syrup not fully mixed in.You aren't certain of the time, and you intend to keep it that way for the majority of the day. " \
+    s101 = "Looking up into the cup {you} see the final swig of coffee disappear beneath your nose, the light brown liquid is run through with " \
+    "dark splotches of syrup not fully mixed in to the beverage. You aren't certain of the time, and you intend to keep it that way for " \
+    "as long as possible. " \
     "Downing the specialty drink, the phrase \"slemming coffee\" springs to your mind, in the way personal memetics always do. As you set it " \
     "on its plate the white porcelain lets out a solid clink. You are sitting in your favorite local cafe, officially its name is \"Racy " \
     "D'lenes Coffee Lounge\", but ever since you were introduced to it, you've only ever called it {Racy's}. You are sitting by the bay " \
-    "windows that make up much of the cafe's front, at the {table} you usually take."
+    "windows that make up much of the cafe's front, at your usual {table}."
     print(textwrap.fill(s101,width))
     while True:
         s102 = "You can feel the caffeine slowing you down, sort of like your head is filling with that back of the throat weight that " \
-        "comes with a deep yawn. You regret having not ordered your drink with decaf."
+        "comes with a deep yawn. You regret having not ordered your drink with decaf. Though it occurs to you to wonder if that would have even " \
+        "been an option."
         print(textwrap.fill(s102,width))
         action = input("> ").lower().strip()
         if action == "look you":
@@ -56,21 +58,25 @@ def scene_1():
             print(textwrap.fill(s104,width))
             pause()
         elif action == "look racy's":
-            print("*")
+            s106 = "The cafe is a relatively small space, it is sparcely populated. A few college age people sit at the counter chatting " \
+            "quietly with the barista, who they clearly know. Indie music plays quietly over the spaces speakers. As comfortable as you are " \
+            "here, now that your drink is finished you have no real reason not to leave, your {car} is parked just outside."
         elif action == "look table":
             s105 = "On the table sits the now empty mug, formerly the vessel for your preffered drink from Racy's, a \"Willow\", though " \
             "you struggle to define what exactly it tastes like, it has been your go to order for the past few years, since Jeremiah stopped " \
-            "working as a barista, when he was there your go to was the \"Bree's Knees\" but no one else makes it like he used to the " \
+            "working as a barista, when he was there your go to was the \"Bree's Knees\" but no one else makes it like he used to, the " \
             "\"Willow\" is a far less subtle drink, so you find that it comes out more consistently well made. As for the table itself, " \
             "it's unremarkable as an object, a slightly wobbly tall circular surface, flanked on two sides by spinning stools. The only " \
-            "thing that makes it compelling is the specific nostalgia you have tied to it... But today isn't about the past, today is the " \
-            "future! You choose not to dwell on it."
+            "thing that makes it compelling is the specific nostalgia you have tied to it."
             print(textwrap.fill(s105,width))
             pause()
         elif action == "inventory" or "inv":
             inv_manage()
+        elif action == "go to car":
+            break
         else:
             print("I don't understand.")
+    approach_car()
 
 def drunk_crash():
     print("you done fucked up...") #"*"
@@ -117,7 +123,7 @@ def discuss_current(): #"*" I need to write all these dialogues, and also, doubl
     else:
         (callable_comp[0](cursce[0]))
 
-sts_lib = ["voyeurism"] #"*" has 1 option
+sts_lib = ["voyeurism"] #"*" has 1 option, is a list of the options for the 'shoot the shit' command
 
 def discuss_whatever(): #"*"
     ShootintheShit = random.randint(0,0)
@@ -252,8 +258,8 @@ def dest_list():
         print(f"{location}")
 
 def car(): #"*"
+    alc_check()
     while True:
-        alc_check()
         destination = input("Where do you want to go?").lower().strip()
         if destination == "i don't know" or 'idk' or 'help' or 'i dont know':
             print("These are the places you can think to go to:")
@@ -270,48 +276,58 @@ def car(): #"*"
     (destination())
 
 def approach_car(): #"*"
-    while True:
-        car_parked(car_loc) #describes the car's parked location
-
-home = 'home'
-def car_parked(home):
-    print("*") #etc.
+    car_parked(car_loc) #describes the car's parked location
+    car() #makes the car actually usable
 
 cemetary = 'cemetary'    
 def car_parked(cemetary):
-    print("*")
+    cp_cemetary = "*"
+    print(textwrap.fill(cp_cemetary,width))
 
 downtown = 'downtown'
 def car_parked(downtown):
-    print("*")
+    cp_downtown = "*"
+    print(textwrap.fill(cp_downtown,width))
 
 boyd = 'boyd park'
 def car_parked(boyd):
-    print("*")
+    cp_boyd = "*"
+    print(textwrap.fill(cp_boyd,width))
 
 simon = 'mt simon'
 def car_parked(mt):
-    print("*")
+    cp_mt = "*"
+    print(textwrap.fill(cp_mt,width))
 
 high = 'hi bridge'
 def car_parked(high):
-    print("*")
+    cp_high = "*"
+    print(textwrap.fill(cp_high,width))
 
 mall = 'mall'
 def car_parked(mall):
-    print("*")
+    cp_mall = "*"
+    print(textwrap.fill(cp_mall,width))
 
 water = 'water st'
 def car_parked(water):
-    print("*")
+    cp_water = "*"
+    print(textwrap.fill(cp_water,width))
 
 campus = 'low campus'
 def car_parked(campus):
-    print("*")
+    cp_campus = "*"
+    print(textwrap.fill(cp_campus,width))
 
 carson = 'carson'
 def car_parked(carson):
-    print("*")
+    cp_carson = "*"
+    print(textwrap.fill(cp_carson,width))
+
+racys = 'racys'
+def car_parked(racys):
+    cp_racys = "*"
+    print(textwrap.fill(cp_racys,width))
 
 #Car drive_tos
 
@@ -859,7 +875,7 @@ def width_set():
 
 cursce = [start_game]
 car_loc = car_parked[0]
-car_spot = ['home']
+car_spot = ['racys']
 alc = []
 abv = []
 ang = []
