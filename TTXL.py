@@ -22,6 +22,7 @@ def start_game(): #Opening Description
     pause()
     cursce.pop(0) 
     cursce.insert(0,scene_1)
+    scene_1()
 
 def scene_1():
     s101 = "Looking up into the cup {you} see the final swig of coffee disappear beneath your nose, the light brown liquid is run through with " \
@@ -60,7 +61,9 @@ def scene_1():
         elif action == "look racy's":
             s106 = "The cafe is a relatively small space, it is sparcely populated. A few college age people sit at the counter chatting " \
             "quietly with the barista, who they clearly know. Indie music plays quietly over the spaces speakers. As comfortable as you are " \
-            "here, now that your drink is finished you have no real reason not to leave, your {car} is parked just outside."
+            "here, now that your drink is finished you have no real reason not to leave, your car is parked just {outside}."
+            print(textwrap.fill(s106,width))
+            pause()
         elif action == "look table":
             s105 = "On the table sits the now empty mug, formerly the vessel for your preffered drink from Racy's, a \"Willow\", though " \
             "you struggle to define what exactly it tastes like, it has been your go to order for the past few years, since Jeremiah stopped " \
@@ -72,11 +75,28 @@ def scene_1():
             pause()
         elif action == "inventory" or "inv":
             inv_manage()
-        elif action == "go to car":
+        elif action == "go outside" or "leave":
+            s107 = "You stand from the stool, collect the mug and plate, and place them in the dish return bin at the far end of the counter, " \
+            "as you walk to the door you perform the needless but ritualistic patting of the pockets in your jacket to check you have everything. " \
+            "You push the door outwards to exit the cafe, and quickly upon exiting take your default posture with your hands in the main pockets. "
+            "As you adjust to the cold, it occurs to you to consider. 'What do I do now?'."
+            print(textwrap.fill(s107,width))
+            pause()
             break
         else:
             print("I don't understand.")
-    approach_car()
+    cursce.pop(0) 
+    cursce.insert(0,racys_parking_lot)
+    racys_parking_lot()
+
+def racys_parking_lot():
+    if car_spot == 'racys':
+        car_parked_racys() #that'll contain the scene description
+    else:
+        print("Your car isn't parked here.")
+    rpl01 = "The Racy's parking lot, not a huge space, it runs perpendicular to Water St., along what would be conventionally thought of as the " \
+    "back of the building. From where you're standing you can see {Water St.} itself, "
+    print(textwrap.fill(rpl01,width))
 
 def drunk_crash():
     print("you done fucked up...") #"*"
@@ -141,15 +161,12 @@ def the_girl(voyeurism):
     print("*")
 def the_fetish(voyeurism):
     print("*")
-def the_saviour(voyeurism): #(*)
-    sts_saviour_voyeurism = "Fielding is watching you, she has been the whole time really, but it's starting to get to you. Something " \
-    "about its deep brown eyes makes you feel a strange sort of conflict. On the one hand you find it aggresive, and honestly a little " \
-    "frightening, but equally there's a sense of security, an almost gitty joy at having your details attended to so carefully. You " \
-    "haven't felt that kind of gaze in a long time. \"What's on your mind?\" Fielding asks, zirs eyeline"
+def the_saviour(voyeurism): #"*"
+    print("*")
 
 #Discussing Relationship w/Companions
 
-#Talking about current scene w/Companions
+#Talking about current scene w/Companionss
 
 #Initial Menus and Such
 def start_screen(): #Start screena
@@ -175,9 +192,9 @@ def help_screen(): #Player info
     "mentioned in a description simply write 'go to [location]' if you want to pick up an item, write 'take [item] if you want to use " \
     "something in the environment write 'use [object], and if you are talking to someone 'ask [subject]' or whatever contextually makes " \
     "sense as a reply will work, assuming of course I thought of it. I will {highlight} objects you can interact with, and if someone asks " \
-    "you a question I'll tell you what your options are. At anytime in the game you can use the inputs 'inventory', 'save', and 'load' to " \
-    "do what it sounds like the command does. Occasionally the text will stop coming, if this happens, the program is waiting for any " \
-    "input, simply hit enter to continue."
+    "you a question I'll tell you what your options are. You can use the input 'inventory', to access said inventory, this is available during " \
+    "most \"action\" prompts, but not during \"dialogue\" prompts. From the inventory you can use the \"use me\" command with the notebook item " \
+    "to save, or load. Occasionally the text will stop coming, if this happens, the program is waiting for any input, simply hit enter to continue."
     print(textwrap.fill(hs01,width))
     print("Do you understand?")
     choice = input("> ").lower().strip()
@@ -257,10 +274,16 @@ def dest_list():
     for location in known_loc:
         print(f"{location}")
 
-def car(): #"*"
+def car(): #"*" should probably describe how the comps interact with the car.
+    car01 = "You walk up to the driver side of the old beater, spinning the keys on your finger in the same way one might twirl a revolver, " \
+    "slide into the familiar seat, start the engine, and plug in your mp3 player."
+    print(textwrap.fill(car01,width))
+    T = random.randint(1,50)
+    print("With the audible buzz of active audio equipment interacting"); print(mp3[T]); print("erupts from the cars speakers.")
     alc_check()
     while True:
-        destination = input("Where do you want to go?").lower().strip()
+        print("Where do you want to go?")
+        destination = input("> ").lower().strip()
         if destination == "i don't know" or 'idk' or 'help' or 'i dont know':
             print("These are the places you can think to go to:")
             dest_list()
@@ -275,57 +298,53 @@ def car(): #"*"
             pass
     (destination())
 
-def approach_car(): #"*"
-    car_parked(car_loc) #describes the car's parked location
-    car() #makes the car actually usable
-
 cemetary = 'cemetary'    
-def car_parked(cemetary):
+def car_parked_cemetary():
     cp_cemetary = "*"
     print(textwrap.fill(cp_cemetary,width))
 
 downtown = 'downtown'
-def car_parked(downtown):
+def car_parked_downtown():
     cp_downtown = "*"
     print(textwrap.fill(cp_downtown,width))
 
 boyd = 'boyd park'
-def car_parked(boyd):
+def car_parked_boyd():
     cp_boyd = "*"
     print(textwrap.fill(cp_boyd,width))
 
 simon = 'mt simon'
-def car_parked(mt):
+def car_parked_mt():
     cp_mt = "*"
     print(textwrap.fill(cp_mt,width))
 
 high = 'hi bridge'
-def car_parked(high):
+def car_parked_high():
     cp_high = "*"
     print(textwrap.fill(cp_high,width))
 
 mall = 'mall'
-def car_parked(mall):
+def car_parked_mall():
     cp_mall = "*"
     print(textwrap.fill(cp_mall,width))
 
 water = 'water st'
-def car_parked(water):
+def car_parked_water():
     cp_water = "*"
     print(textwrap.fill(cp_water,width))
 
 campus = 'low campus'
-def car_parked(campus):
+def car_parked_campus():
     cp_campus = "*"
     print(textwrap.fill(cp_campus,width))
 
 carson = 'carson'
-def car_parked(carson):
+def car_parked_carson():
     cp_carson = "*"
     print(textwrap.fill(cp_carson,width))
 
 racys = 'racys'
-def car_parked(racys):
+def car_parked_racys():
     cp_racys = "*"
     print(textwrap.fill(cp_racys,width))
 
@@ -725,7 +744,7 @@ def oracle_cards():
         inv_manage()
 #Here is being worked on
 
-#All of this stuff is for Inv Management, mostly it's done.
+#All of this stuff is for Inv Management, mostly it's done. Maybe reformat this to treat the jacket itself as the inventory
 
 def inv_manage(): #Inv Management menu Function
     while True:
@@ -866,8 +885,8 @@ def load_game(): #Load Function "*"
 def width_set():
     print("The default text width is '150', after choosing a new value, an example text will be displayed.")
     value = input("Input New Value> ")
-    textwidth.pop(0)
-    textwidth.insert(0,value)
+    width.pop(0)
+    width.insert(0,value)
     example_text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vel aliquam urna. Fusce suscipit gravida nisi, id placerat massa imperdiet sit amet. Mauris venenatis, quam et laoreet euismod, risus augue efficitur lectus, sit amet interdum ante massa in mauris. Vivamus ut est et nisl auctor rutrum eget ut mauris. Fusce ullamcorper, dui interdum interdum ultrices, lacus magna luctus risus, eu eleifend nisl nunc a est. Morbi in ex consectetur, sagittis est sit amet, feugiat turpis. Nam quis tincidunt dui. Morbi sodales auctor mauris vitae mattis. Vivamus vitae ullamcorper erat, sit amet faucibus arcu. Integer vitae tempus urna, id egestas libero. Duis nec lacus vehicula, sollicitudin est sed, tincidunt magna. Integer tincidunt nisi id justo consectetur, a ultrices nibh hendrerit. Morbi condimentum consequat tristique. Etiam imperdiet massa sit amet justo fringilla, ut mollis nisi luctus. "
     print(textwrap.fill(example_text,width[0]))
     pause()
