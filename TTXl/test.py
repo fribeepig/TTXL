@@ -26,3 +26,6 @@ print(spot)
 Go_Down()
 print(spot)
 Go_Down()
+
+
+#current issue is that index doesn;t seem to care that negative numbers are a thing
