@@ -7,13 +7,12 @@ import sys
 import array
 import random
 
+#Scenes
 def start_game():
     intro = ""
     print(textwrap.fill(intro,width))
 
-
 #The Stuff to make stuff work... I think, it's been a while
-
 def pause(): #Pause and wait for user input function
     choice = input("").lower().strip()
     if choice == "":
